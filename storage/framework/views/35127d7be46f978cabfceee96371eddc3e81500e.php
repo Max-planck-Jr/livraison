@@ -1,21 +1,5 @@
-<!--
-
-=========================================================
-* Argon Dashboard - v1.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -40,7 +24,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <!-- Brand -->
-      <a class="navbar-brand pt-0" href="index.html">
+      <a class="navbar-brand pt-0" href="<?php echo e(route('dashboard')); ?>">
         <img src="\img/brand/blue.png" class="navbar-brand-img" alt="...">
       </a>
       <!-- User -->
@@ -87,7 +71,7 @@
             <div class="dropdown-divider"></div>
             <a href="index.html#!" class="dropdown-item">
               <i class="ni ni-user-run"></i>
-              <span>Logout</span>
+              <span>Déconnexion</span>
             </a>
           </div>
         </li>
@@ -103,6 +87,9 @@
     <!-- Header -->
     <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
       <div class="container-fluid">
+        <?php if($errors->any()): ?>
+          <p class="alert alert-<?php echo e($errors->all()[1]); ?>"><?php echo e($errors->all()[0]); ?></p>
+        <?php endif; ?>
         <div class="header-body">
           <!-- Card stats -->
           <?php echo $__env->yieldContent("content"); ?>
@@ -121,8 +108,6 @@
           <div class="col-xl-6">
             <ul class="nav nav-footer justify-content-center justify-content-xl-end">
               <li class="nav-item">
-                  <?php echo e(bcrypt("password")); ?>
-
                 <a href="" class="nav-link">ZED LOGISTICS</a>
               </li>
               <li class="nav-item">
@@ -137,6 +122,7 @@
       </footer>
     </div>
   </div>
+<?php echo $__env->make('sweet::alert', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->make('partials.script', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 <?php echo $__env->yieldContent('script'); ?>
 </body>

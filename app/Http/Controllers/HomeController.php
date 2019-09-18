@@ -21,7 +21,8 @@ class HomeController extends Controller
             return redirect()->route('dashboard');
         } else {
             return back()->withErrors([
-                'message' => 'Email ou mot de passe incorrects'
+                'message' => 'Email ou mot de passe incorrects',
+                "label" => "danger"
             ]);
         }
     }
