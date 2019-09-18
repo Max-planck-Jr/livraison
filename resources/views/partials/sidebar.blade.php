@@ -57,5 +57,11 @@
                 <i class="fas fa-dollar-sign"></i> Gérer les tarifs
             </a>
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link " href="{{ route('conflits.index') }}">
+                <i class="fa fa-fire" aria-hidden="true"></i> Gérer les conflits
+            </a>
+        </li>
     </ul>
 </div>

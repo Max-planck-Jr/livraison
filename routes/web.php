@@ -24,4 +24,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get("colis/{id}/send", "ColisController@send")->name("colis.send");
 
     Route::resource('tarifs', 'TarifsController');
+
+    Route::resource('conflits', 'IncidentsController');
+    Route::get("conflits/{id}/resolve", "IncidentsController@resolve")->name("conflits.resolve");
+    Route::get("conflits/{id}/print/letter", "IncidentsController@generateLetter")->name("conflist.generateLetter");
 });
