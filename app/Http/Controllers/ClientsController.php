@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Client;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Log;
 
 class ClientsController extends Controller
 {
@@ -37,18 +38,27 @@ class ClientsController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $this->validate($request, [
+            "firstName" => "required",
+            "lastName"  => "required",
+            "email"     => "email|required",
+            "phone"     => "required"
+        ]);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        $client = new Client();
+        $client->fill($request->all());
+
+        try{
+
+            $client->save();
+            return back()->withSuccess("Le client a été enregistré avec succès.");
+
+        }catch(Exception $e){
+            Log::error($e->getMessage());
+            return back()->withErrors([
+                "message" => "Une erreur est survenue, veuillez réessayer s'il vous plait."
+            ]);
+        }
     }
 
     /**
@@ -59,7 +69,8 @@ class ClientsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $client = Client::findOrFail($id);
+        return view("clients.edit", compact("client"));
     }
 
     /**
@@ -71,7 +82,27 @@ class ClientsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            "firstName" => "required",
+            "lastName"  => "required",
+            "email"     => "email|required",
+            "phone"     => "required"
+        ]);
+
+        $client = Client::findOrFail($id);
+        $client->fill($request->all());
+
+        try{
+
+            $client->save();
+            return back()->withSuccess("Le client a été mis à jour avec succès.");
+
+        }catch(Exception $e){
+            Log::error($e->getMessage());
+            return back()->withErrors([
+                "message" => "Une erreur est survenue, veuillez réessayer s'il vous plait."
+            ]);
+        }
     }
 
     /**
@@ -82,6 +113,8 @@ class ClientsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $client = Client::findOrFail($id);
+        $client->delete();
+        return back()->withSuccess("Le client a été supprimé avec succès.");
     }
 }

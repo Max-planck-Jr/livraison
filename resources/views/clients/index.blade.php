@@ -49,8 +49,12 @@
                                         <td>{{ $client->email }}</td>
                                         <td>{{ $client->adress }}</td>
                                         <td>
-                                            <button class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></button>
-                                            <button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                            <a href="{{ route('clients.edit', $client->id) }}" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
+                                            <form method="POST" action="{{ route('clients.destroy', $client->id) }}" style="display: inline;">
+                                                @csrf
+                                                @method("DELETE")
+                                                <button class="btn btn-sm btn-danger deleteButton"><i class="fa fa-trash"></i></button>
+                                            </form>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -65,6 +69,6 @@
 
 @section('script')
     <script>
-        $(".dataTable").DataTable()
+
     </script>
 @endsection

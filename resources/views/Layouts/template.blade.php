@@ -40,6 +40,7 @@
     <link rel="stylesheet" href="{{ asset('js/plugins/@fortawesome/fontawesome-free/css/all.min.css') }}" type="text/css">
     <!-- Page plugins -->
     <!-- Argon CSS -->
+    <link rel="stylesheet" href="{{ asset('js/plugins/sweetalert2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('css/argon-dashboard.min-v=1.1.0.css') }}" type="text/css">
     <!-- Google Tag Manager -->
 
@@ -225,6 +226,21 @@
         <!-- Page content -->
         <div class="container-fluid mt--2">
             <div class="row">
+                <div class="col-md-12">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    @if (session()->has("success"))
+                        <p class="alert alert-success">{{ session("success") }}</p>
+                    @endif
+
                 @yield("content")
             </div>
 
@@ -262,9 +278,30 @@
     <!-- Argon Scripts -->
     <!-- Core -->
     @include('partials.script')
+    <script>
+         $(".dataTable").DataTable()
+
+        $(".deleteButton").click(function(evt){
+            evt.preventDefault()
+            var form = $(this).closest("form")
+            swal({
+                title:"Êtes-vous sûr ?",
+                text:"Vous ne pourrez pas annuler cette action!",
+                type:"question",
+                buttonsStyling:!1,
+                confirmButtonClass: "btn btn-danger",
+                showCancelButton: true,
+                confirmButtonText: "Supprimer",
+                cancelButtonClass:"btn btn-secondary"
+            }).then((willDelete) => {
+                console.log(willDelete.value)
+                if(willDelete.value == true){
+                    form.submit()
+                }
+            })
+        })
+    </script>
     @yield('script')
-
-
 </body>
 
 </html>

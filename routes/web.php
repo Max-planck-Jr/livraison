@@ -20,4 +20,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 
     Route::resource("clients", "ClientsController");
+    Route::resource('colis', 'ColisController');
+    Route::get("colis/{id}/send", "ColisController@send")->name("colis.send");
+
+    Route::resource('tarifs', 'TarifsController');
 });

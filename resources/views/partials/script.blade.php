@@ -18,6 +18,8 @@
 <script src="{{ asset('js/plugins/datatables/js/buttons.print.min.js') }}"></script>
 <script src="{{ asset('js/plugins/datatables/js/dataTables.select.min.js') }}"></script>
 
+<script src="{{ asset('js/plugins/sweetalert2.min.js') }}"></script>
+
 <noscript>
     <img height="1" width="1" style="display:none"
         src="https://www.facebook.com/tr?id=111649226022273&ev=PageView&noscript=1" />

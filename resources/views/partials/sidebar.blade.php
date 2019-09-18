@@ -45,5 +45,11 @@
                 <i class="fa fa-users" aria-hidden="true"></i> Gérer les clients
             </a>
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link " href="{{ route('colis.index') }}">
+                <i class="fas fa-box"></i> Gérer les colis
+            </a>
+        </li>
     </ul>
 </div>
