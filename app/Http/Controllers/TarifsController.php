@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Tarif;
 
 class TarifsController extends Controller
 {
@@ -14,7 +15,8 @@ class TarifsController extends Controller
      */
     public function index()
     {
-        //
+        $tarifs = Tarif::all();
+        return view("tarifs.index", compact("tarifs"));
     }
 
     /**
@@ -24,7 +26,7 @@ class TarifsController extends Controller
      */
     public function create()
     {
-        //
+        return view("tarifs.create");
     }
 
     /**
@@ -35,18 +37,12 @@ class TarifsController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $tarif = new Tarif();
+        $tarif->libelle = $request->libelle;
+        $tarif->montant = $request->montant;
+        $tarif->save();
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        return back()->withSuccess("Le tarif a bien été créé.");
     }
 
     /**
@@ -57,7 +53,8 @@ class TarifsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tarif = Tarif::findOrFail($id);
+        return view("tarifs.edit", compact("tarif"));
     }
 
     /**
@@ -69,7 +66,12 @@ class TarifsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tarif = Tarif::findOrfail($id);
+        $tarif->libelle = $request->libelle;
+        $tarif->montant = $request->montant;
+        $tarif->save();
+
+        return back()->withSuccess("Le tarif a bien été mis à jour.");
     }
 
     /**
@@ -80,6 +82,9 @@ class TarifsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tarif = Tarif::findOrFail($id);
+        $tarif->delete();
+
+        return back()->withSuccess("Le tarif a bien été supprimé.");
     }
 }

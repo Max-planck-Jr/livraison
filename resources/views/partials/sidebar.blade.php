@@ -51,5 +51,11 @@
                 <i class="fas fa-box"></i> Gérer les colis
             </a>
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link " href="{{ route('tarifs.index') }}">
+                <i class="fas fa-dollar-sign"></i> Gérer les tarifs
+            </a>
+        </li>
     </ul>
 </div>
