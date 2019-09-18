@@ -60,6 +60,9 @@ class IncidentsController extends Controller
 
     public function generateLetter($id){
         $incident = Incident::with("coli.client")->findOrFail($id);
+        if($incident->statut == "En attente") return back()->withErrors([
+            "message" => "Le conflit doit être marqué comme résolu."
+        ]);
         $pdf = PDF::loadView('incidents.letter', ["incident" => $incident]);
         return $pdf->stream('invoice.pdf');
     }
