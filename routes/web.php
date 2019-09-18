@@ -18,4 +18,6 @@ Route::post('/', 'HomeController@authLogin')->name('loginAction');
 Route::group(['middleware' => 'auth'], function () {
     Route::post('/logout', 'HomeController@logout')->name('logout');
     Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
+
+    Route::resource("clients", "ClientsController");
 });
