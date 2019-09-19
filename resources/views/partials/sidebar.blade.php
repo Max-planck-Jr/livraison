@@ -42,7 +42,7 @@
 
         <li class="nav-item">
             <a class="nav-link " href="{{ route('suggestions') }}">
-                <i class="fa fa-message text-orange"></i> Suggestions des utilisateurs
+                <i class="fa fa-comment text-blue"></i> Suggestions des utilisateurs
             </a>
         </li>
 
@@ -54,19 +54,19 @@
 
         <li class="nav-item">
             <a class="nav-link " href="{{ route('colis.index') }}">
-                <i class="fas fa-box"></i> Gérer les colis
+                <i class="fas fa-box text-blue"></i> Gérer les colis
             </a>
         </li>
 
         <li class="nav-item">
             <a class="nav-link " href="{{ route('tarifs.index') }}">
-                <i class="fas fa-dollar-sign"></i> Gérer les tarifs
+                <i class="fas fa-dollar-sign text-blue"></i> Gérer les tarifs
             </a>
         </li>
 
         <li class="nav-item">
             <a class="nav-link " href="{{ route('conflits.index') }}">
-                <i class="fa fa-fire" aria-hidden="true"></i> Gérer les conflits
+                <i class="fa fa-fire text-blue" aria-hidden="true"></i> Gérer les conflits
             </a>
         </li>
     </ul>
