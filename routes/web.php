@@ -19,6 +19,15 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/logout', 'HomeController@logout')->name('logout');
     Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 
+    Route::resource("clients", "ClientsController");
+    Route::resource('colis', 'ColisController');
+    Route::get("colis/{id}/send", "ColisController@send")->name("colis.send");
+
+    Route::resource('tarifs', 'TarifsController');
+
+    Route::resource('conflits', 'IncidentsController');
+    Route::get("conflits/{id}/resolve", "IncidentsController@resolve")->name("conflits.resolve");
+    Route::get("conflits/{id}/print/letter", "IncidentsController@generateLetter")->name("conflist.generateLetter");
     //Users
     Route::get('/agents', 'AgentController@index')->name('agents');
     Route::get('/agentCreate', 'AgentController@create')->name('newAgent');
