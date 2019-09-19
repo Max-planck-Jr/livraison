@@ -12,8 +12,8 @@
 */
 
 //Authentication
-Route::get('/', 'HomeController@login')->name('login');
-Route::post('/', 'HomeController@authLogin')->name('loginAction');
+Route::get('/login', 'HomeController@login')->name('login');
+Route::post('/login', 'HomeController@authLogin')->name('loginAction');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::post('/logout', 'HomeController@logout')->name('logout');
@@ -27,3 +27,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/agentUpdate/{id}', 'AgentController@update')->name('updateAgent');
     Route::post('/agentDestroy/{id}', 'AgentController@destroy')->name('destroyAgent');
 });
+
+Route::get('/', 'HomeController@frontEnd')->name('front');
+Route::post('/feedback', 'HomeController@feedback')->name('feedback');

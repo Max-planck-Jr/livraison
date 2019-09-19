@@ -38,7 +38,7 @@
                             <tbody>
                                 @foreach ($agents as $agent)
                                     <tr>
-                                        <td>{{ $agent->id }}</td>
+                                        <td>{{ ++$count }}</td>
                                         <td>{{ $agent->first_name }}</td>
                                         <td>{{ $agent->last_name }}</td>
                                         <td>{{ $agent->login }}</td>

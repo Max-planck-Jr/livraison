@@ -15,7 +15,8 @@ class AgentController extends Controller
         foreach($agents as $agent){
             $agent->account_id = AccountType::find($agent->account_id)->label;
         }
-        return view("agents.index", compact("agents"));
+        $count = 0;
+        return view("agents.index", compact("agents", "count"));
     }
 
     public function create()

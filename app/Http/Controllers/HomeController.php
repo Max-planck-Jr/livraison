@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Feedback;
+use App\Tarif;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -29,11 +32,50 @@ class HomeController extends Controller
 
     public function logout()
     {
-        return redirect('/');
+        Auth::logout();
+        return redirect()->route("login");
     }
 
     public function dashboard()
     {
         return view('Home.dashboard');
+    }
+
+    public function frontEnd()
+    {
+        Auth::logout();
+
+        $third_tarifs = Tarif::all()->take(3);
+        $tarifs = Tarif::all();
+        return view("Home.frontEnd", compact('tarifs', "third_tarifs"));
+    }
+
+    public function feedback(Request $request)
+    {
+        $feedback = new Feedback;
+        if(isset($request->name))
+        {
+            $feedback->name = $request->name;
+        }
+        if(isset($request->subject))
+        {
+            $feedback->subject = $request->subject;
+        }
+        $feedback->email = $request->email;
+        $feedback->message = $request->message;
+        
+        if($feedback->save())
+        {
+            return redirect()->route("front")->withErrors([
+                "message" => "Message envoyé",
+                "label" => "success"
+            ]);
+        } else 
+        {
+            return redirect()->route("front")->withErrors([
+                "message" => "Echec d'envoi veuillez reessayer plus tard",
+                "label" => "danger"
+            ]);
+        }
     }
 }
