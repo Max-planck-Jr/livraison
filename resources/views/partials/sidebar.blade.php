@@ -37,5 +37,10 @@
         <i class="ni ni-planet text-blue"></i> Gestion des agents
       </a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link " href="{{ route('suggestions') }}">
+          <i class="ni ni-pin-3 text-orange"></i> Suggestions des utilisateurs
+        </a>
+      </li>
   </ul>
 </div>
