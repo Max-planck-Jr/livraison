@@ -1,5 +1,5 @@
 @extends('Layouts.template')
-@section('title', 'Nouvel agent')
+@section('title', 'Editer l\'agent')
 @section('content')
 <div class="col-xl-12 order-xl-1">
         <div class="card bg-secondary shadow">

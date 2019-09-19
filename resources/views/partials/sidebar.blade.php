@@ -31,24 +31,24 @@
     <!-- Navigation -->
     <ul class="navbar-nav">
         <li class="nav-item  class=">
-            <a class=" nav-link active " href="index.html"> <i class="ni ni-tv-2 text-primary"></i> Tableau de bord
-            </a>
+            <a class="nav-link active" href="{{ route('dashboard') }}"> <i class="fa fa-home text-primary"></i> Tableau de bord </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link " href="/users">
-                <i class="ni ni-planet text-blue"></i> Comptes utilisateurs
-            </a>
-        </li>
-        
+
         <li class="nav-item">
           <a class="nav-link " href="{{ route('agents') }}">
-            <i class="ni ni-planet text-blue"></i> Gestion des agents
+            <i class="fa fa-user-secret text-blue"></i> Gestion des agents
           </a>
         </li>
 
         <li class="nav-item">
+            <a class="nav-link " href="{{ route('suggestions') }}">
+                <i class="fa fa-message text-orange"></i> Suggestions des utilisateurs
+            </a>
+        </li>
+
+        <li class="nav-item">
             <a class="nav-link " href="{{ route('clients.index') }}">
-                <i class="fa fa-users" aria-hidden="true"></i> Gérer les clients
+                <i class="fa fa-users text-primary" aria-hidden="true"></i> Gérer les clients
             </a>
         </li>
 

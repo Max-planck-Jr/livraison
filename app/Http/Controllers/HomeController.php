@@ -50,6 +50,20 @@ class HomeController extends Controller
         return view("Home.frontEnd", compact('tarifs', "third_tarifs"));
     }
 
+    public function suggestions()
+    {
+        $suggestions = Feedback::all()->where("state", "==", "0");
+        return view("Home.suggestion", compact("suggestions"));
+    }
+
+    public function changeSuggestionState($id)
+    {
+        $suggestion = Feedback::find($id);
+        $suggestion->state = 1;
+        $suggestion->save();
+        return redirect()->back()->withSuccess("L'état de la suggestion a bien été modifié");
+    }
+
     public function feedback(Request $request)
     {
         $feedback = new Feedback;
@@ -63,14 +77,14 @@ class HomeController extends Controller
         }
         $feedback->email = $request->email;
         $feedback->message = $request->message;
-        
+
         if($feedback->save())
         {
             return redirect()->route("front")->withErrors([
                 "message" => "Message envoyé",
                 "label" => "success"
             ]);
-        } else 
+        } else
         {
             return redirect()->route("front")->withErrors([
                 "message" => "Echec d'envoi veuillez reessayer plus tard",

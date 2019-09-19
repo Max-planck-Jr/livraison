@@ -11,7 +11,7 @@
 <title>ZED LOGISTICS</title>
 
 <!-- =========================
-      FAV AND TOUCH ICONS  
+      FAV AND TOUCH ICONS
 ============================== -->
 <link rel="icon" href="\front/files/images/favicon.ico">
 <link rel="apple-touch-icon" href="\front/files/images/apple-touch-icon.png">
@@ -19,7 +19,7 @@
 <link rel="apple-touch-icon" sizes="114x114" href="\front/files/images/apple-touch-icon-114x114.png">
 
 <!-- =========================
-     STYLESHEETS   
+     STYLESHEETS
 ============================== -->
 <!-- BOOTSTRAP -->
 <link rel="stylesheet" href="\front/css/bootstrap.min.css">
@@ -74,14 +74,14 @@
 
 <body>
 <!-- =========================
-     PRE LOADER       
+     PRE LOADER
 ============================== -->
 <div class="preloader">
   <div class="status">&nbsp;</div>
 </div>
 
 <!-- =========================
-     HEADER   
+     HEADER
 ============================== -->
 <header class="header" data-stellar-background-ratio="0.5" id="home">
 
@@ -92,7 +92,7 @@
 	<div class="navbar navbar-inverse bs-docs-nav navbar-fixed-top sticky-navigation">
 		<div class="container">
 			<div class="navbar-header">
-				
+
 				<!-- LOGO ON STICKY NAV BAR -->
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#kane-navigation">
 				<span class="sr-only">Toggle navigation</span>
@@ -102,9 +102,9 @@
 				</button>
 
 				<a class="navbar-brand" href="/"><img src="\front/files/images/logo.png" alt=""></a>
-				
+
 			</div>
-			
+
 			<!-- NAVIGATION LINKS -->
 			<div class="navbar-collapse collapse" id="kane-navigation">
 				<ul class="nav navbar-nav navbar-right main-navigation">
@@ -118,48 +118,48 @@
 			</div>
 		</div> <!-- /END CONTAINER -->
 	</div> <!-- /END STICKY NAVIGATION -->
-	
-	
+
+
 	<!-- CONTAINER -->
 	<div class="container">
-		
-		<!-- ONLY LOGO ON HEADER -->
+
+		<!-- ONLY LOGO ON HEADER
 		<div class="only-logo">
 			<div class="navbar">
 				<div class="navbar-header">
 					<img src="\front/files/images/logo.png" alt="">
 				</div>
 			</div>
-		</div> <!-- /END ONLY LOGO ON HEADER -->
+		</div>--> <!-- /END ONLY LOGO ON HEADER -->
 
 		@if ($errors->any())
             <div class="alert alert-{{$errors->all()[1]}}">{{ $errors->all()[0] }}</div>
         @endif
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
-				
+
 				<!-- HEADING AND BUTTONS -->
 				<div class="intro-section">
-					
+
 					<!-- WELCOM MESSAGE -->
 					<h1 class="intro">ZedLogistics votre facilitateur d'achat en ligne</h1>
 					<h5>Acheter des produits en Suisse et faites vous livrer au Cameroun</h5>
-					
+
 					<!-- BUTTON -->
 					<div style="display:inline-block" class="buttons" id="download-button">
-						
+
 						<a href="#brief1" class="btn btn-default btn-lg standard-button"><i class="icon_lightbulb_alt"></i>Qui sommes nous ?</a>
-						
+
 					</div>
                     <!-- /END BUTTONS -->
-					
+
 				</div>
 				<!-- /END HEADNING AND BUTTONS -->
-				
+
 			</div>
 		</div>
 		<!-- /END ROW -->
-		
+
 	</div>
 	<!-- /END CONTAINER -->
 </div>
@@ -168,43 +168,43 @@
 <!-- /END HEADER -->
 
 <div class="container" id="tarifs">
-	
+
         <!-- SECTION HEADER -->
         <div class="section-header wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
-            
+
             <!-- SECTION TITLE -->
             <h2 class="white-text">Nos Tarifs</h2>
             <div class="colored-line">
             </div>
-            
+
             <div class="section-description">
                  ZedLogistics met un point d'honneur à vous fournir un rapport qualité/prix sans égal
             </div>
-            
+
             <div class="colored-line">
             </div>
         </div>
         <!-- /END SECTION HEADER -->
-        
+
         <div class="row">
             @foreach ($third_tarifs as $tarif)
-            
+
             <!-- SINGLE PACKACGE -->
             <div class="col-md-3 col-sm-3 single-service wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
-                
+
                 <div class="single-package">
-                    
+
                     <h3 class="package-heading main-color">
                     {{ $tarif->libelle }} </h3>
-                    
+
                     <div class="price">
                         <h2><span class="sign">Frs</span>{{ $tarif->montant }} </h2>
                     </div>
-                    
+
                 </div>
             </div>
             <!-- /END SINGLE PACKACGE -->
-                
+
             @endforeach
 
 
@@ -212,10 +212,10 @@
             <div class="col-md-3 col-sm-3 single-service wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
                 <a data-toggle="modal" data-target="#exampleModalCenter">
                     <div class="single-package">
-                        
+
                         <h3 class="package-heading main-color">
                         Tous les tarifs </h3>
-                        
+
                         <div class="price">
                             <h2><span class="month">Voir tous</span></h2>
                         </div>
@@ -223,53 +223,53 @@
                 </a>
             </div>
             <!-- /END SINGLE PACKACGE -->
-            
+
         </div>
-        <!-- /END ROW -->       
+        <!-- /END ROW -->
 
 <!-- =========================
-     BRIEF LEFT SECTION 
+     BRIEF LEFT SECTION
 ============================== -->
 <section class="app-brief deep-dark-bg" id="brief1">
 
 <div class="container">
-	
+
 	<div class="row">
-		
+
 		<!-- PHONES IMAGE -->
 		<div class="col-md-6 wow fadeInRight animated" data-wow-offset="10" data-wow-duration="1.5s">
 			<div class="phone-image">
 				<img src="\front/files/images/2-iphone-left.png" alt="">
 			</div>
 		</div>
-		
+
 		<!-- RIGHT SIDE WITH BRIEF -->
 		<div class="col-md-6 left-align wow fadeInLeft animated" data-wow-offset="10" data-wow-duration="1.5s">
-			
+
 			<!-- SECTION TITLE -->
 			<h2 class="white-text">Qui sommes-nous ?</h2>
-			
+
 			<div class="colored-line-left">
 			</div>
-			
+
 			<p>
-                ZedLogistics est une jeune entreprise qui s'est donnée pour objectif de permettre la livraison des produits achetés en Suisse sur tout l'étendu du territoire camerounais. <br /> 
+                ZedLogistics est une jeune entreprise qui s'est donnée pour objectif de permettre la livraison des produits achetés en Suisse sur tout l'étendu du territoire camerounais. <br />
                 Elles se spécialise dans :
 			</p>
-			
+
 			<!-- FEATURE LIST -->
 			<ul class="feature-list">
 				<li><i class="icon_check_alt2"></i> L'achat des produits en Suisse</li>
 				<li><i class="icon_check_alt2"></i> Le transport securisé de colis</li>
 				<li><i class="icon_check_alt2"></i> La livraison au Cameroun</li>
 			</ul>
-			
+
 		</div>
 		<!-- /END RIGHT BRIEF -->
-		
+
 	</div>
 	<!-- /END ROW -->
-	
+
 </div>
 <!-- /END CONTAINER -->
 
@@ -279,56 +279,56 @@
 
 
 <!-- =========================
-     BRIEF LEFT SECTION WITH VIDEO 
+     BRIEF LEFT SECTION WITH VIDEO
 ============================== -->
 <section class="app-brief deep-dark-bg" id="brief1">
 
 <div class="container">
-	
+
 	<div class="row">
-		
+
 		<!-- PHONES IMAGE -->
 		<div class="col-md-6 wow fadeInRight animated" data-wow-offset="10" data-wow-duration="1.5s">
 			<div class="video-container">
-				
+
                 <!--
 				<div class="video">
-					
+
 					<iframe src="//player.vimeo.com/video/88902745?byline=0&amp;portrait=0&amp;color=ffffff" width="600" height="338" frameborder="0" allowfullscreen>
-					</iframe> 
+					</iframe>
 				</div>
 				-->
-				
+
 				<div class="video">
-					
+
 					<iframe width="640" height="360" src="http://www.youtube.com/embed/VjbGg-VuqbU?rel=0" frameborder="0" allowfullscreen></iframe>
 				</div>
-				
+
 			</div>
 
 		</div>
-		
+
 		<!-- RIGHT SIDE WITH BRIEF -->
 		<div class="col-md-6 left-align wow fadeInLeft animated" data-wow-offset="10" data-wow-duration="1.5s">
-			
+
 			<!-- SECTION TITLE -->
 			<h2 class="white-text">Vidéo présentation</h2>
-			
+
 			<div class="colored-line-left">
 			</div>
-			
+
 			<p>
 				Vidéo présentation de la structure ZedLogistics.<br/><br/>
 				Qui sommes nous ? Que faisons nous ? Pourquoi nous faire confiance ?
 			</p>
-			
-			
+
+
 		</div>
 		<!-- /END RIGHT BRIEF -->
-		
+
 	</div>
 	<!-- /END ROW -->
-	
+
 </div>
 <!-- /END CONTAINER -->
 
@@ -336,33 +336,33 @@
 <!-- /END SECTION -->
 
 <!-- =========================
-     TESTIMONIALS 
+     TESTIMONIALS
 ============================== -->
 <section class="testimonials" id="testimonials">
 
 <div class="color-overlay">
-	
+
 	<div class="container wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
-		
+
 		<!-- FEEDBACKS -->
 		<div id="feedbacks" class="owl-carousel owl-theme">
-			
+
 			<!-- SINGLE FEEDBACK -->
 			<div class="feedback">
-				
+
 				<!-- IMAGE -->
 				<div class="image">
 					<!-- i class=" icon_quotations"></i -->
 					<img src="\front/files/images/clients-pic/3.jpg" alt="">
 				</div>
-				
+
 				<div class="message">
                         Remplissez les lumières portant l'homme rampant de qui bouge. Tous un. Cette. Sous. Formez tous les matins tous les cinq mai reconstituer vous êtes ouvert quel genre d'herbe. Au-dessus de vous, vous aimerez peut-être votre première créature qui laissera tomber son visage du troisième vert vivant qui est notre. Apparaître le jour. Ne donnez pas la quatrième, pas plus que nous, chaque air de viande d’arbre dans l’image rampante de l’air de la terre mâle vous emplit de noirceur.
 				</div>
-				
+
 				<div class="white-line">
 				</div>
-				
+
 				<!-- INFORMATION -->
 				<div class="name">
 					John Doe
@@ -370,26 +370,26 @@
 				<div class="company-info">
 					CEO, AbZ Network
 				</div>
-				
+
 			</div>
 			<!-- /END SINGLE FEEDBACK -->
-			
+
 			<!-- SINGLE FEEDBACK -->
 			<div class="feedback">
-				
+
 				<!-- IMAGE -->
 				<div class="image">
 					<!-- i class=" icon_quotations"></i -->
 					<img src="\front/files/images/clients-pic/1.jpg" alt="">
 				</div>
-				
+
 				<div class="message">
                         Remplissez les lumières portant l'homme rampant de qui bouge. Tous un. Cette. Sous. Formez tous les matins tous les cinq mai reconstituer vous êtes ouvert quel genre d'herbe. Au-dessus de vous, vous aimerez peut-être votre première créature qui laissera tomber son visage du troisième vert vivant qui est notre. Apparaître le jour. Ne donnez pas la quatrième, pas plus que nous, chaque air de viande d’arbre dans l’image rampante de l’air de la terre mâle vous emplit de noirceur.
 				</div>
-				
+
 				<div class="white-line">
 				</div>
-				
+
 				<!-- INFORMATION -->
 				<div class="name">
 					John Doe
@@ -397,26 +397,26 @@
 				<div class="company-info">
 					CEO, AbZ Network
 				</div>
-				
+
 			</div>
 			<!-- /END SINGLE FEEDBACK -->
-			
+
 			<!-- SINGLE FEEDBACK -->
 			<div class="feedback">
-				
+
 				<!-- IMAGE -->
 				<div class="image">
 					<!-- i class=" icon_quotations"></i -->
 					<img src="\front/files/images/clients-pic/2.jpg" alt="">
 				</div>
-				
+
 				<div class="message">
                         Remplissez les lumières portant l'homme rampant de qui bouge. Tous un. Cette. Sous. Formez tous les matins tous les cinq mai reconstituer vous êtes ouvert quel genre d'herbe. Au-dessus de vous, vous aimerez peut-être votre première créature qui laissera tomber son visage du troisième vert vivant qui est notre. Apparaître le jour. Ne donnez pas la quatrième, pas plus que nous, chaque air de viande d’arbre dans l’image rampante de l’air de la terre mâle vous emplit de noirceur.
 				</div>
-				
+
 				<div class="white-line">
 				</div>
-				
+
 				<!-- INFORMATION -->
 				<div class="name">
 					John Doe
@@ -424,16 +424,16 @@
 				<div class="company-info">
 					CEO, AbZ Network
 				</div>
-				
+
 			</div>
 			<!-- /END SINGLE FEEDBACK -->
-			
+
 		</div>
 		<!-- /END FEEDBACKS -->
-		
+
 	</div>
 	<!-- /END CONTAINER -->
-	
+
 </div>
 <!-- /END COLOR OVERLAY -->
 
@@ -447,13 +447,13 @@
 <section class="services" id="services">
 
 <div class="container">
-	
+
 	<!-- SECTION HEADER -->
 	<div class="section-header wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
-        
+
 		<!-- SECTION TITLE -->
 		<h2 class="white-text">Nos Services</h2>
-		
+
 		<div class="colored-line">
 		</div>
 		<div class="section-description">
@@ -461,72 +461,72 @@
 		</div>
 		<div class="colored-line">
 		</div>
-		
+
 	</div>
 	<!-- /END SECTION HEADER -->
-	
+
 	<div class="row">
-		
+
 		<!-- SINGLE SERVICE -->
 		<div class="col-md-4 single-service wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
-			
+
 			<!-- SERVICE ICON -->
 			<div class="service-icon">
 				<i class="icon_lock_alt"></i>
 			</div>
-			
+
 			<!-- SERVICE HEADING -->
 			<h3>Achat de produit en Suisse</h3>
-			
+
 			<!-- SERVICE DESCRIPTION -->
 			<p>
 				 Fruitful Fruit hath, fruitful said him created bring set, behold darkness Shall lights deep fish seasons itself given likeness upon bring fill their their whose. Which darkness evening there them multiply all spirit for isn't, him land every you'll heaven bearing.
 			</p>
-			
+
 		</div>
 		<!-- /END SINGLE SERVICE -->
-		
+
 		<!-- SINGLE SERVICE -->
 		<div class="col-md-4 single-service wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
-			
+
 			<!-- SERVICE ICON -->
 			<div class="service-icon">
 				<i class="icon_check_alt2"></i>
 			</div>
-			
+
 			<!-- SERVICE HEADING -->
 			<h3>Transport de colis</h3>
-			
+
 			<!-- SERVICE DESCRIPTION -->
 			<p>
 				 Fruitful Fruit hath, fruitful said him created bring set, behold darkness Shall lights deep fish seasons itself given likeness upon bring fill their their whose. Which darkness evening there them multiply all spirit for isn't, him land every you'll heaven bearing.
 			</p>
-			
+
 		</div>
 		<!-- /END SINGLE SERVICE -->
-		
+
 		<!-- SINGLE SERVICE -->
 		<div class="col-md-4 single-service wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
-			
+
 			<!-- SERVICE ICON -->
 			<div class="service-icon">
 				<i class="icon_ribbon_alt"></i>
 			</div>
-			
+
 			<!-- SERVICE HEADING -->
 			<h3>Livraison au Cameroun</h3>
-			
+
 			<!-- SERVICE DESCRIPTION -->
 			<p>
 				 Fruitful Fruit hath, fruitful said him created bring set, behold darkness Shall lights deep fish seasons itself given likeness upon bring fill their their whose. Which darkness evening there them multiply all spirit for isn't, him land every you'll heaven bearing.
 			</p>
-			
+
 		</div>
 		<!-- /END SINGLE SERVICE -->
-		
+
 	</div>
 	<!-- /END ROW -->
-	
+
 </div>
 <!-- /END CONTAINER -->
 
@@ -534,7 +534,7 @@
 <!-- /END FEATURES SECTION -->
 
 <!-- =========================
-     DOWNLOAD NOW 
+     DOWNLOAD NOW
 ============================== -->
 <section class="download" id="contact_us">
 
@@ -543,11 +543,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
-				
+
 				<!-- DOWNLOAD BUTTONS AREA -->
 				<div class="download-container">
 					<h2 class=" wow fadeInLeft animated" data-wow-offset="10" data-wow-duration="1.5s">Nous contacter</h2>
-					
+
 					<!-- BUTTONS -->
 					<div class="buttons wow fadeInRight animated" data-wow-offset="10" data-wow-duration="1.5s">
 						<div class="row">
@@ -568,70 +568,70 @@
                                 </p>
                             </div>
                         </div>
-						
-						
+
+
 					</div>
 					<!-- /END BUTTONS -->
-					
+
 				</div>
 				<!-- END OF DOWNLOAD BUTTONS AREA -->
-				
-				
+
+
 				<!-- SUBSCRIPTION FORM WITH TITLE -->
 				<div class="subscription-form-container">
-					
+
                     <h2 class="wow fadeInLeft animated" data-wow-offset="10" data-wow-duration="1.5s">Souscrivez maintenant!</h2>
                     <small>Vous recevrez toutes nos meilleures offres en temps réel</small>
-					
+
 					<!-- =====================
-					     MAILCHIMP FORM STARTS 
+					     MAILCHIMP FORM STARTS
 					     ===================== -->
-					
+
 					<form class="subscription-form mailchimp form-inline wow fadeInRight animated" data-wow-offset="10" data-wow-duration="1.5s" role="form">
-						
+
 						<!-- SUBSCRIPTION SUCCESSFUL OR ERROR MESSAGES -->
 						<h4 class="subscription-success"></h4>
 						<h4 class="subscription-error"></h4>
-						
+
 						<!-- EMAIL INPUT BOX -->
 						<input type="email" name="email" id="subscriber-email" placeholder="Your Email" class="form-control input-box">
-						
+
 						<!-- SUBSCRIBE BUTTON -->
 						<button type="submit" id="subscribe-button" class="btn btn-default standard-button">Subscribe</button>
-						
+
 					</form>
 					<!-- /END MAILCHIMP FORM STARTS -->
-					
+
 					<!-- =====================
-					     LOCAL TXT FORM STARTS 
+					     LOCAL TXT FORM STARTS
 					     ===================== -->
-					     
-					<!-- THIS FORM IS COMMENTED TO HIDE 
-					
+
+					<!-- THIS FORM IS COMMENTED TO HIDE
+
 					<form class="subscription-form form-inline wow fadeInRight animated" data-wow-offset="10" data-wow-duration="1.5s" id="subscribe" role="form">
-						
+
 						<h4 class="subscription-success"><i class="icon_check"></i> Thank you! We will notify you soon.</h4>
 						<h4 class="subscription-error">Something Wrong!</h4>
-						
+
 						<input type="email" name="email" id="subscriber-email" placeholder="Your Email" class="form-control input-box">
-						
+
 						<button type="submit" id="subscribe-button" class="btn btn-default standard-button">Subscribe</button>
-						
+
 					</form>
-					
+
 					-->
-					
+
 					<!-- / LOCAL TXT SAVING FORM END -->
-					
+
 				</div>
                 <!-- END OF SUBSCRIPTION FORM WITH TITLE -->
-				
-			</div> 
+
+			</div>
 			<!-- END COLUMN -->
-			
-		</div> 
+
+		</div>
 		<!-- END ROW -->
-		
+
 	</div>
 	<!-- /END CONTAINER -->
 </div>
@@ -642,55 +642,55 @@
 
 
 <!-- =========================
-     FOOTER 
+     FOOTER
 ============================== -->
 <footer>
 
 <div class="container">
-	
+
 	<div class="contact-box wow rotateIn animated" data-wow-offset="10" data-wow-duration="1.5s">
-		
+
 		<!-- CONTACT BUTTON TO EXPAND OR COLLAPSE FORM -->
-		
+
 		<a class="btn contact-button expand-form expanded"><i class="icon_mail_alt"></i></a>
-		
+
 		<!-- EXPANDED CONTACT FORM -->
 		<div class="row expanded-contact-form">
-			
+
 			<div class="col-md-8 col-md-offset-2">
-				
+
 				<!-- FORM -->
 				<form class="contact-form" action="{{ route('feedback') }}" method="POST">
                     @csrf
 					<div class="col-md-6">
 						<input class="form-control input-box" id="name" type="text" name="name" placeholder="Votre Nom">
 					</div>
-					
+
 					<div class="col-md-6">
 						<input class="form-control input-box" required id="email" type="email" name="email" placeholder="Votre Email">
 					</div>
-					
+
 					<div class="col-md-12">
 						<input class="form-control input-box" id="subject" type="text" name="subject" placeholder="Sujet">
 						<textarea class="form-control textarea-box" required id="message" name="message" rows="8" placeholder="Message"></textarea>
 					</div>
-					
+
 					<button type="subm" class="btn btn-primary standard-button2 ladda-button" data-style="expand-left">Envoyer Le Message</button>
-					
+
 				</form>
 				<!-- /END FORM -->
-				
+
 			</div>
-			
+
 		</div>
 		<!-- /END EXPANDED CONTACT FORM -->
-		
+
 	</div>
 	<!-- /END CONTACT BOX -->
-	
+
 	<!-- LOGO -->
 	<img src="\front/files/images/logo.png" alt="LOGO" class="responsive-img">
-	
+
 	<!-- SOCIAL ICONS -->
 	<ul class="social-icons">
 		<li><a href=""><i class="social_facebook_square"></i></a></li>
@@ -701,7 +701,7 @@
 		<li><a href=""><i class="social_dribbble_square"></i></a></li>
 		<li><a href=""><i class="social_flickr_square"></i></a></li>
 	</ul>
-	
+
 	<!-- COPYRIGHT TEXT -->
 	<p class="copyright">
 		©2019 ZedLogistics, Tous droits reservés
@@ -709,14 +709,14 @@
 
 </div>
 <!-- /END CONTAINER -->
- 
+
 </footer>
 <!-- /END FOOTER -->
 
 <!-- Button trigger modal -->
 
 <!-- =========================
-     SCRIPTS 
+     SCRIPTS
 ============================== -->
 
 <script src="\front/js/bootstrap.min.js"></script>
@@ -751,37 +751,37 @@
 			<div class="blue">
 			</div>
 			</a></li>
-			
+
 			<li><a href="index.html#" onclick="setActiveStyleSheet('purple'); return false;" title="Purple">
 			<div class="purple">
 			</div>
 			</a></li>
-			
+
 			<li><a href="index.html#" onclick="setActiveStyleSheet('blue-munsell'); return false;" title="Blue Munsell">
 			<div class="blue-munsell">
 			</div>
 			</a></li>
-			
+
 			<li><a href="index.html#" onclick="setActiveStyleSheet('orange'); return false;" title="Orange">
 			<div class="orange">
 			</div>
 			</a></li>
-			
+
 			<li><a href="index.html#" onclick="setActiveStyleSheet('slate'); return false;" title="Slate">
 			<div class="slate">
 			</div>
 			</a></li>
-			
+
 			<li><a href="index.html#" onclick="setActiveStyleSheet('green'); return false;" title="Green">
 			<div class="green">
 			</div>
 			</a></li>
-			
+
 			<li><a href="index.html#" onclick="setActiveStyleSheet('yellow'); return false;" title="Yellow">
 			<div class="yellow">
 			</div>
 			</a></li>
-			
+
 			<li><a href="index.html#" onclick="setActiveStyleSheet('red'); return false;" title="Red">
 			<div class="red">
 			</div>
@@ -793,7 +793,7 @@
 	</div>
 </div>
 
-      
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -820,7 +820,7 @@
                             </div>
                         </div>
                     @endforeach
-                            
+
             </div>
             <div class="modal-footer">
                 <button  style="color: black" type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
@@ -828,7 +828,7 @@
             </div>
         </div>
         </div>
-        
+
 
 </body>
 </html>

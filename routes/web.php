@@ -35,6 +35,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/agentEdit/{id}', 'AgentController@edit')->name('editAgent');
     Route::post('/agentUpdate/{id}', 'AgentController@update')->name('updateAgent');
     Route::post('/agentDestroy/{id}', 'AgentController@destroy')->name('destroyAgent');
+
+    //Suggestions
+    Route::get('/sug', 'HomeController@suggestions')->name('suggestions');
+    Route::post('/sug/{id}', 'HomeController@changeSuggestionState')->name('changeState');
 });
 
 Route::get('/', 'HomeController@frontEnd')->name('front');

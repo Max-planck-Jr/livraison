@@ -11,10 +11,7 @@ class AgentController extends Controller
 {
     public function index()
     {
-        $agents = User::paginate(5);
-        foreach($agents as $agent){
-            $agent->account_id = AccountType::find($agent->account_id)->label;
-        }
+        $agents = User::paginate(10);
         $count = 0;
         return view("agents.index", compact("agents", "count"));
     }
@@ -36,25 +33,20 @@ class AgentController extends Controller
             $agent->country = $request->country;
             $agent->password = bcrypt($agent->password);
             if($agent->save()){
-                return redirect()->route("agents")->withErrors([
-                    "message" => "Utilisateur créé",
-                    "label" => "success"
-                ]);
+                return redirect()->route("agents")->withSuccess("L'agent a bien été créé.");
             } else {
                 return back()->withErrors([
                     'message' => 'Echec de l\'enregistrement du nouvel agent',
-                    "label" => "danger"
                 ]);
             }
         } else {
             return back()->withErrors([
                 'message' => 'Les mots de passe ne coîncident pas',
-                "label" => "danger"
             ]);
         }
     }
 
-    public function edit($id) 
+    public function edit($id)
     {
         $user = User::find($id);
         $accounts = AccountType::all();
@@ -89,7 +81,7 @@ class AgentController extends Controller
             {
                 $agent->password = bcrypt($agent->password);
             }
-            
+
             if($agent->save()){
                 return redirect()->route("agents")->withErrors([
                     'message' => 'Mis à jour effectuée',
@@ -113,18 +105,13 @@ class AgentController extends Controller
         if ( auth()->user()->id == $id ) {
             return redirect()->back()->withErrors([
                 "message" => "Vous ne pouvez pas supprimé votre compte",
-                "label" => "danger"
             ]);
         }
-        if(User::findOrFail($id)->delete() ) {
-            return redirect()->back()->withErrors([
-                "message" => "Suppression effectuée",
-                "label" => "success"
-            ]);
-        } 
+        if(User::findOrFail($id)->delete()) {
+            return redirect()->back()->withSuccess("Suppression effectuée");
+        }
         return redirect()->back()->withErrors([
             "message" => "Erreur lors de la suppression",
-            "label" => "danger"
         ]);
     }
 }

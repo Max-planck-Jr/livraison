@@ -39,4 +39,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function accountType(){
+        return $this->belongsTo(AccountType::class, "account_id");
+    }
 }

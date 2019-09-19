@@ -42,13 +42,13 @@
                                         <td>{{ $agent->first_name }}</td>
                                         <td>{{ $agent->last_name }}</td>
                                         <td>{{ $agent->login }}</td>
-                                        <td>{{ $agent->account_id }}</td>
+                                        <td>{{ $agent->accountType->label }}</td>
                                         <td>{{ $agent->country }}</td>
                                         <td>
                                             <a href="{{ route('editAgent', ['id' => $agent->id]) }}" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
                                             <form style="display: inline-block" method="post" id="form" action="{{ route('destroyAgent', ['id' => $agent->id]) }}" style="border:none">
                                                 @csrf
-                                                <button id="delete" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>
+                                                <button type="button" class="btn btn-sm deleteButton btn-danger"><i class="fa fa-trash"></i></button>
                                             </form>
                                         </td>
                                     </tr>
@@ -61,18 +61,4 @@
             </div>
         </div>
     </div>
-@endsection
-@section('script')
-<script>
-    /* $(".dataTable").DataTable(); */
-</script>
-<script>
-    $("#form").submit(function(e) {
-        /* e.preventDefault();
-        if(confirm("Vous allez supprimer cet agent"))
-        {
-            e.submit;
-        } */
-    })
-</script>
 @endsection
