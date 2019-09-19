@@ -16,6 +16,7 @@
             </div>
         </div>
     </div>
+
     <!-- Form -->
     <form class="mt-4 mb-3 d-md-none">
         <div class="input-group input-group-rounded input-group-merge">
@@ -43,6 +44,12 @@
         <li class="nav-item">
           <a class="nav-link " href="{{ route('agents') }}">
             <i class="ni ni-planet text-blue"></i> Gestion des agents
+          </a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link " href="{{ route('suggestions') }}">
+            <i class="ni ni-pin-3 text-orange"></i> Suggestions des utilisateurs
           </a>
         </li>
 
