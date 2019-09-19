@@ -17,8 +17,8 @@
 <script src="{{ asset('js/plugins/datatables/js/buttons.flash.min.js') }}"></script>
 <script src="{{ asset('js/plugins/datatables/js/buttons.print.min.js') }}"></script>
 <script src="{{ asset('js/plugins/datatables/js/dataTables.select.min.js') }}"></script>
-
 <script src="{{ asset('js/plugins/sweetalert2.min.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 
 <noscript>
     <img height="1" width="1" style="display:none"

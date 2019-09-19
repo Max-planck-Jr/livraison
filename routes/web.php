@@ -12,8 +12,8 @@
 */
 
 //Authentication
-Route::get('/', 'HomeController@login')->name('login');
-Route::post('/', 'HomeController@authLogin')->name('loginAction');
+Route::get('/login', 'HomeController@login')->name('login');
+Route::post('/login', 'HomeController@authLogin')->name('loginAction');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::post('/logout', 'HomeController@logout')->name('logout');
@@ -28,4 +28,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('conflits', 'IncidentsController');
     Route::get("conflits/{id}/resolve", "IncidentsController@resolve")->name("conflits.resolve");
     Route::get("conflits/{id}/print/letter", "IncidentsController@generateLetter")->name("conflist.generateLetter");
+    //Users
+    Route::get('/agents', 'AgentController@index')->name('agents');
+    Route::get('/agentCreate', 'AgentController@create')->name('newAgent');
+    Route::post('/agentStore', 'AgentController@store')->name('storeAgent');
+    Route::get('/agentEdit/{id}', 'AgentController@edit')->name('editAgent');
+    Route::post('/agentUpdate/{id}', 'AgentController@update')->name('updateAgent');
+    Route::post('/agentDestroy/{id}', 'AgentController@destroy')->name('destroyAgent');
 });
+
+Route::get('/', 'HomeController@frontEnd')->name('front');
+Route::post('/feedback', 'HomeController@feedback')->name('feedback');

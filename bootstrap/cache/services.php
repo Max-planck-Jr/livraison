@@ -47,6 +47,7 @@
     7 => 'Illuminate\\Pagination\\PaginationServiceProvider',
     8 => 'Illuminate\\Session\\SessionServiceProvider',
     9 => 'Illuminate\\View\\ViewServiceProvider',
+
     10 => 'Barryvdh\\DomPDF\\ServiceProvider',
     11 => 'BeyondCode\\DumpServer\\DumpServerServiceProvider',
     12 => 'Fideloper\\Proxy\\TrustedProxyServiceProvider',

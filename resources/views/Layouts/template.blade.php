@@ -1,19 +1,5 @@
-<!-- =========================================================
-* Argon Dashboard PRO v1.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-dashboard-pro
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
- -->
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -45,7 +31,6 @@
     <!-- Google Tag Manager -->
 
 </head>
-
 <body>
 
     <!-- End Google Tag Manager (noscript) -->
@@ -76,6 +61,47 @@
                     @include('partials.sidebar')
                 </div>
             </div>
+            <a href="examples/profile.html" class="dropdown-item">
+              <i class="ni ni-single-02"></i>
+              <span>My profile</span>
+            </a>
+            <a href="examples/profile.html" class="dropdown-item">
+              <i class="ni ni-settings-gear-65"></i>
+              <span>Settings</span>
+            </a>
+            <a href="examples/profile.html" class="dropdown-item">
+              <i class="ni ni-calendar-grid-58"></i>
+              <span>Activity</span>
+            </a>
+            <a href="examples/profile.html" class="dropdown-item">
+              <i class="ni ni-support-16"></i>
+              <span>Support</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="index.html#!" class="dropdown-item">
+              <i class="ni ni-user-run"></i>
+              <span>Déconnexion</span>
+            </a>
+          </div>
+        </li>
+      </ul>
+      <!-- Collapse -->
+      @include('partials.sidebar')
+    </div>
+  </nav>
+  <div class="main-content">
+    <!-- Navbar -->
+    @include('partials.navbar')
+    <!-- End Navbar -->
+    <!-- Header -->
+    <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+      <div class="container-fluid">
+        @if($errors->any())
+          <p class="alert alert-{{ $errors->all()[1] }}">{{ $errors->all()[0] }}</p>
+        @endif
+        <div class="header-body">
+          <!-- Card stats -->
+          @yield("content")
         </div>
     </nav>
     <!-- Main content -->

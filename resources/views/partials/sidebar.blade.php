@@ -39,6 +39,12 @@
                 <i class="ni ni-planet text-blue"></i> Comptes utilisateurs
             </a>
         </li>
+        
+        <li class="nav-item">
+          <a class="nav-link " href="{{ route('agents') }}">
+            <i class="ni ni-planet text-blue"></i> Gestion des agents
+          </a>
+        </li>
 
         <li class="nav-item">
             <a class="nav-link " href="{{ route('clients.index') }}">

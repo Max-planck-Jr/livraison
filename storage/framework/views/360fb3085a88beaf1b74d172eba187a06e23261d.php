@@ -29,12 +29,12 @@
   <!-- Navigation -->
   <ul class="navbar-nav">
     <li class="nav-item  class=">
-    <a class=" nav-link active " href="index.html"> <i class="ni ni-tv-2 text-primary"></i> Tableau de bord
+    <a class=" nav-link active " href="<?php echo e(route('dashboard')); ?>"> <i class="ni ni-tv-2 text-primary"></i> Tableau de bord
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link " href="/users">
-        <i class="ni ni-planet text-blue"></i> Comptes utilisateurs
+      <a class="nav-link " href="<?php echo e(route('agents')); ?>">
+        <i class="ni ni-planet text-blue"></i> Gestion des agents
       </a>
     </li>
   </ul>
