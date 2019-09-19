@@ -114,6 +114,11 @@ class ClientsController extends Controller
     public function destroy($id)
     {
         $client = Client::findOrFail($id);
+        if($client->colis->count() > 0){
+            return back()->withErrors([
+                "message" => "Le client ne peut être supprimé car possède des colis."
+            ]);
+        }
         $client->delete();
         return back()->withSuccess("Le client a été supprimé avec succès.");
     }
