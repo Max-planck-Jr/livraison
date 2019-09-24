@@ -37,5 +37,10 @@
         <i class="ni ni-planet text-blue"></i> Gestion des agents
       </a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link " href="<?php echo e(route('suggestions')); ?>">
+          <i class="ni ni-pin-3 text-orange"></i> Suggestions des utilisateurs
+        </a>
+      </li>
   </ul>
 </div><?php /**PATH /Users/osx/Desktop/taf-bikoe/resources/views/partials/sidebar.blade.php ENDPATH**/ ?>

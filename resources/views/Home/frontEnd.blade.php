@@ -101,7 +101,7 @@
 				<span class="icon-bar"></span>
 				</button>
 
-				<a class="navbar-brand" href="/"><img src="\front/files/images/logo.png" alt=""></a>
+				<!--<a class="navbar-brand" href="/"><img src="\front/files/images/logo.png" alt=""></a>-->
 
 			</div>
 

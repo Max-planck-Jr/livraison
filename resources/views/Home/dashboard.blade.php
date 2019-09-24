@@ -16,9 +16,6 @@
                         </div>
                     </div>
                 </div>
-                <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-nowrap">Depuis le mois passé</span>
-                </p>
             </div>
         </div>
     </div>
@@ -36,9 +33,6 @@
                         </div>
                     </div>
                 </div>
-                <p class="mt-3 mb-0 text-muted text-sm">
-                    <span class="text-nowrap">Depuis le mois passé</span>
-                </p>
             </div>
         </div>
     </div>
@@ -88,7 +82,7 @@
                         <h3 class="mb-0">Incident en cours d'instruction</h3>
                     </div>
                     <div class="col text-right">
-                        <a href="{{ route('login') }}" class="btn btn-sm btn-primary">voir tout</a>
+                        <!--<a href="{{ route('login') }}" class="btn btn-sm btn-primary">voir tout</a>-->
                     </div>
                 </div>
             </div>

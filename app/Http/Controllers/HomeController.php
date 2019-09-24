@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Feedback;
 use App\Tarif;
 use App\User;
+use App\Client;
+use App\Colis;
+use App\Incident;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -38,7 +41,17 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        return view('Home.dashboard');
+        $users = Client::all();
+        $colis = Colis::all();
+        $feedbacks = Feedback::all();
+        $conflits = Incident::all()->where("statut", "==", "Résolu");
+        $incidents = Incident::all()->where("statut", "==", "En attente");
+        foreach($incidents as $i)
+        {
+            $i->colis_id = Colis::find($i->colis_id);
+            $i->status = Client::find($i->colis_id->client_id);
+        }
+        return view('Home.dashboard', compact('users', 'colis', 'conflits', 'incidents', 'feedbacks'));
     }
 
     public function frontEnd()
@@ -48,20 +61,6 @@ class HomeController extends Controller
         $third_tarifs = Tarif::all()->take(3);
         $tarifs = Tarif::all();
         return view("Home.frontEnd", compact('tarifs', "third_tarifs"));
-    }
-
-    public function suggestions()
-    {
-        $suggestions = Feedback::all()->where("state", "==", "0");
-        return view("Home.suggestion", compact("suggestions"));
-    }
-
-    public function changeSuggestionState($id)
-    {
-        $suggestion = Feedback::find($id);
-        $suggestion->state = 1;
-        $suggestion->save();
-        return redirect()->back()->withSuccess("L'état de la suggestion a bien été modifié");
     }
 
     public function feedback(Request $request)
@@ -91,5 +90,22 @@ class HomeController extends Controller
                 "label" => "danger"
             ]);
         }
+    }
+
+    public function suggestions()
+    {
+        $suggestions = Feedback::all()->where("state", "==", "0");
+        return view("Home.suggestion", compact("suggestions"));
+    }
+
+    public function changeSuggestionState($id)
+    {
+        $suggestion = Feedback::find($id);
+        $suggestion->state = 1;
+        $suggestion->save();
+        return redirect()->back()->withErrors([
+            "message" => "Etat modifié",
+            "label" => "success"
+        ]);
     }
 }

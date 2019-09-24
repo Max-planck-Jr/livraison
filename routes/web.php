@@ -41,5 +41,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/sug/{id}', 'HomeController@changeSuggestionState')->name('changeState');
 });
 
+//frontEnd
 Route::get('/', 'HomeController@frontEnd')->name('front');
 Route::post('/feedback', 'HomeController@feedback')->name('feedback');

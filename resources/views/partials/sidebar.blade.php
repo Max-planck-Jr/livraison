@@ -16,6 +16,7 @@
             </div>
         </div>
     </div>
+
     <!-- Form -->
     <form class="mt-4 mb-3 d-md-none">
         <div class="input-group input-group-rounded input-group-merge">
