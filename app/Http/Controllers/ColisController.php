@@ -31,6 +31,9 @@ class ColisController extends Controller
 
     public function remove($id){
         $colis = Colis::findOrFail($id);
+        if($colis->statut == "En attente") return back()->withErrors([
+            "message" => "Vous ne pouvez pas retirer un colis en attente de paiement."
+        ]);
         $month = Carbon::now()->month;
         $colis->statut = "Retiré";
         $colis->save();

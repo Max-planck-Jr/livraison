@@ -142,8 +142,8 @@
 				<div class="intro-section">
 
 					<!-- WELCOM MESSAGE -->
-					<h1 class="intro">ZedLogistics votre facilitateur d'achat en ligne</h1>
-					<h5>Acheter des produits en Suisse et faites vous livrer au Cameroun</h5>
+					<h1 class="intro">ZedLogistics votre facilitateur dans les services de logistique et de transport </h1>
+					<h5>Envoyer des produits en du Cameroun vers la Suisse et vice versa</h5>
 
 					<!-- BUTTON -->
 					<div style="display:inline-block" class="buttons" id="download-button">

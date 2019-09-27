@@ -35,17 +35,20 @@
             <a class="nav-link active" href="{{ route('dashboard') }}"> <i class="fa fa-home text-primary"></i> Tableau de bord </a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link " href="{{ route('agents') }}">
-            <i class="fa fa-user-secret text-blue"></i> Gestion des agents
-          </a>
-        </li>
+        @if (auth()->user()->accountType->code == "ADM")
+            <li class="nav-item">
+                <a class="nav-link " href="{{ route('agents') }}">
+                    <i class="fa fa-user-secret text-blue"></i> Gestion des agents
+                </a>
+            </li>
 
-        <li class="nav-item">
-            <a class="nav-link " href="{{ route('suggestions') }}">
-                <i class="fa fa-comment text-blue"></i> Suggestions des utilisateurs
-            </a>
-        </li>
+
+            <li class="nav-item">
+                <a class="nav-link " href="{{ route('suggestions') }}">
+                    <i class="fa fa-comment text-blue"></i> Suggestions des utilisateurs
+                </a>
+            </li>
+        @endif
 
         <li class="nav-item">
             <a class="nav-link " href="{{ route('clients.index') }}">
@@ -65,10 +68,12 @@
             </a>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link " href="{{ route('conflits.index') }}">
-                <i class="fa fa-fire text-blue" aria-hidden="true"></i> Gérer les conflits
-            </a>
-        </li>
+        @if (auth()->user()->accountType->code == "ADM")
+            <li class="nav-item">
+                <a class="nav-link " href="{{ route('conflits.index') }}">
+                    <i class="fa fa-fire text-blue" aria-hidden="true"></i> Gérer les conflits
+                </a>
+            </li>
+        @endif
     </ul>
 </div>
