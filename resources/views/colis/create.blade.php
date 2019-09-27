@@ -16,10 +16,20 @@
                         <form method="POST" action="{{ route('colis.store') }}">
                             @csrf
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-control-label" for="exampleFormControlInput1">Client</label>
                                         <select name="client_id" class="form-control">
+                                            @foreach ($clients as $client)
+                                                <option value="{{ $client->id }}">{{ $client->firstName }} {{ $client->lastName }} <small>{{ $client->email }}</small></option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-control-label" for="exampleFormControlInput1">Destinataire</label>
+                                        <select name="receiver_id" class="form-control">
                                             @foreach ($clients as $client)
                                                 <option value="{{ $client->id }}">{{ $client->firstName }} {{ $client->lastName }} <small>{{ $client->email }}</small></option>
                                             @endforeach

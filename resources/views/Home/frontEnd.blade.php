@@ -101,7 +101,7 @@
 				<span class="icon-bar"></span>
 				</button>
 
-				<!--<a class="navbar-brand" href="/"><img src="\front/files/images/logo.png" alt=""></a>-->
+				<a class="navbar-brand" href="/"><img src="{{ asset('logo.jpeg') }}" alt=""></a>
 
 			</div>
 
@@ -123,14 +123,14 @@
 	<!-- CONTAINER -->
 	<div class="container">
 
-		<!-- ONLY LOGO ON HEADER
+		<!-- ONLY LOGO ON HEADER-->
 		<div class="only-logo">
 			<div class="navbar">
 				<div class="navbar-header">
-					<img src="\front/files/images/logo.png" alt="">
+					<img src="{{ asset('logo.jpeg') }}" alt="">
 				</div>
 			</div>
-		</div>--> <!-- /END ONLY LOGO ON HEADER -->
+		</div> <!-- /END ONLY LOGO ON HEADER -->
 
 		@if ($errors->any())
             <div class="alert alert-{{$errors->all()[1]}}">{{ $errors->all()[0] }}</div>
@@ -357,7 +357,7 @@
 				</div>
 
 				<div class="message">
-                        Remplissez les lumières portant l'homme rampant de qui bouge. Tous un. Cette. Sous. Formez tous les matins tous les cinq mai reconstituer vous êtes ouvert quel genre d'herbe. Au-dessus de vous, vous aimerez peut-être votre première créature qui laissera tomber son visage du troisième vert vivant qui est notre. Apparaître le jour. Ne donnez pas la quatrième, pas plus que nous, chaque air de viande d’arbre dans l’image rampante de l’air de la terre mâle vous emplit de noirceur.
+                    Depuis que j'ai connu Zed-Logistics je ne souffre dans mes affaires, je paie aisément mes produits en Suisse et je les fais parvenir au Cameroun à petit. Bref, mes affaire se marchent à merveille désormais Merci à vous !
 				</div>
 
 				<div class="white-line">
@@ -384,7 +384,7 @@
 				</div>
 
 				<div class="message">
-                        Remplissez les lumières portant l'homme rampant de qui bouge. Tous un. Cette. Sous. Formez tous les matins tous les cinq mai reconstituer vous êtes ouvert quel genre d'herbe. Au-dessus de vous, vous aimerez peut-être votre première créature qui laissera tomber son visage du troisième vert vivant qui est notre. Apparaître le jour. Ne donnez pas la quatrième, pas plus que nous, chaque air de viande d’arbre dans l’image rampante de l’air de la terre mâle vous emplit de noirceur.
+                    Le plus intéressant avec Zed-Logistics c'est qualité de ses services, le temps de réaction, bravo à vous !
 				</div>
 
 				<div class="white-line">
@@ -411,7 +411,7 @@
 				</div>
 
 				<div class="message">
-                        Remplissez les lumières portant l'homme rampant de qui bouge. Tous un. Cette. Sous. Formez tous les matins tous les cinq mai reconstituer vous êtes ouvert quel genre d'herbe. Au-dessus de vous, vous aimerez peut-être votre première créature qui laissera tomber son visage du troisième vert vivant qui est notre. Apparaître le jour. Ne donnez pas la quatrième, pas plus que nous, chaque air de viande d’arbre dans l’image rampante de l’air de la terre mâle vous emplit de noirceur.
+                    J'avais de graves problèmes à l'époque lorsque je voulais envoyer des colis à destination du Cameroun. Mais depuis que j'ai connu Zed-Logistics, j'envoie en toute sérénité des colis au Cameroun et dans des délais très courts.
 				</div>
 
 				<div class="white-line">
@@ -689,7 +689,7 @@
 	<!-- /END CONTACT BOX -->
 
 	<!-- LOGO -->
-	<img src="\front/files/images/logo.png" alt="LOGO" class="responsive-img">
+	<img src="{{ asset('logo.jpeg') }}" alt="LOGO" class="responsive-img">
 
 	<!-- SOCIAL ICONS -->
 	<ul class="social-icons">

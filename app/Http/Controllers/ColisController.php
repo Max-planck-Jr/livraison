@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Tarif;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Mail;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class ColisController extends Controller
 {
@@ -21,6 +22,24 @@ class ColisController extends Controller
     {
         $colis = Colis::where("country", auth()->user()->country)->get();
         return view("colis.index", compact("colis"));
+    }
+
+    public function withdrawal(){
+        $colis = Colis::where("country", "!=", auth()->user()->country)->get();
+        return view("colis.withdrawal", compact("colis"));
+    }
+
+    public function remove($id){
+        $colis = Colis::findOrFail($id);
+        $month = Carbon::now()->month;
+        $colis->statut = "Retiré";
+        $colis->save();
+        /*Mail::raw('Bonjour monsieur, votre colis est arrivé à destination.', function ($message) use($colis) {
+            $message->from('support@zedlogistics.com', 'Support');
+            $message->to($colis->client->email, $colis->client->firstName." ".$colis->client->lastName);
+        });*/
+        $pdf = PDF::loadView('colis.withdrawal_invoice', ["colis" => $colis, "month" => $month]);
+        return $pdf->stream('colis.pdf');
     }
 
     /**
@@ -44,7 +63,12 @@ class ColisController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            "client_id" => "required"
+            "client_id" => "required",
+            "receiver_id" => "required",
+        ]);
+
+        if($request->client_id == $request->receiver_id) return back()->withErrors([
+            "message" => "Le client ne peut s'envoyer de colis à lui même."
         ]);
 
         $colis = new Colis();
@@ -55,15 +79,11 @@ class ColisController extends Controller
         try{
             $colis->save();
 
-            $isReceived = Colis::where("client_id", $colis->id)->where("statut", "Envoyé")->where("country", "!=", auth()->user()->country)->where("nom", $colis->nom)->fisrt() != null;
-            if($isReceived){
-                Mail::raw('Bonjour monsieur, votre colis est arrivé à destination.', function ($message) use($request, $colis) {
-                    $message->from('support@zedlogistics.com', 'Support');
-                    $message->to($colis->client->email, $colis->client->firstName." ".$colis->client->lastName);
-                });
-            }
+            $month = Carbon::now()->month;
 
-            return back()->withSuccess("Le colis a enregistré avec succès.");
+            $pdf = PDF::loadView('colis.deposit_invoice', ["colis" => $colis, "month" => $month]);
+            return $pdf->stream('colis.pdf');
+            //return back()->withSuccess("Le colis a enregistré avec succès.");
 
         }catch(Exception $e){
             Log::error($e->getMessage());

@@ -9,7 +9,9 @@
 <body style="margin-left: 5%; margin-right: 5%;">
     <div style="width: 100%;">
         <br />
-        <br />
+        <div style="text-align: center">
+            <img src="{{ asset('logo.jpeg') }}" alt="">
+        </div>
         <br />
         <br />
         <h1 style="text-align: center">Zed-Logistics</h1>
@@ -18,9 +20,7 @@
         <br />
         <br />
         <br />
-        <br />
-        <br />
-        <br />
+
         <br />
         <h3 style="text-align: center">Dédommagement</h3>
         <p style="text-align: justify">
@@ -28,7 +28,7 @@
             <br />
             <div style="margin-left: 50px; text-align: start;">
                 <b>Nom : </b>{{ $incident->coli->nom }} <br />
-                <b>Nature : </b> {{ $incident->nature ?? "Non défini" }} <br />
+                <b>Nature : </b> {{ $incident->coli->nature ?? "Non défini" }} <br />
                 <b>Poids : </b>{{ $incident->coli->poids }} <br />
                 <b>Date d'entrée : </b>{{ $incident->coli->date_entree }} <br />
                 <b>Date d'arrivée prévue : </b> {{ $incident->coli->date_arrivee }}
@@ -36,7 +36,7 @@
             <br />
             <br />
             <span style="margin-left: 0; text-align: start">
-                A payer une somme de ................................., soit la valeur du colis endommagé, en date du {{ Carbon\Carbon::today() }} dans les délais.
+                A payer une somme de ................................., soit la valeur du colis endommagé, en date du {{ Carbon\Carbon::today() }} dans les délais d'un mois à compter de la présente date.
             </span>
         </p>
     </div>

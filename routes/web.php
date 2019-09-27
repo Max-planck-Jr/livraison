@@ -16,12 +16,14 @@ Route::get('/login', 'HomeController@login')->name('login');
 Route::post('/login', 'HomeController@authLogin')->name('loginAction');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::post('/logout', 'HomeController@logout')->name('logout');
+    Route::get('/logout', 'HomeController@logout')->name('logout');
     Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 
     Route::resource("clients", "ClientsController");
+    Route::get("colis/withdrawal", "ColisController@withdrawal")->name("colis.withdrawal");
     Route::resource('colis', 'ColisController');
     Route::get("colis/{id}/send", "ColisController@send")->name("colis.send");
+    Route::get("colis/{id}/remove", "ColisController@remove")->name("colis.get");
 
     Route::resource('tarifs', 'TarifsController');
 
