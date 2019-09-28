@@ -478,9 +478,6 @@
 			<h3>Achat de produit en Suisse</h3>
 
 			<!-- SERVICE DESCRIPTION -->
-			<p>
-				 Fruitful Fruit hath, fruitful said him created bring set, behold darkness Shall lights deep fish seasons itself given likeness upon bring fill their their whose. Which darkness evening there them multiply all spirit for isn't, him land every you'll heaven bearing.
-			</p>
 
 		</div>
 		<!-- /END SINGLE SERVICE -->
@@ -497,9 +494,6 @@
 			<h3>Transport de colis</h3>
 
 			<!-- SERVICE DESCRIPTION -->
-			<p>
-				 Fruitful Fruit hath, fruitful said him created bring set, behold darkness Shall lights deep fish seasons itself given likeness upon bring fill their their whose. Which darkness evening there them multiply all spirit for isn't, him land every you'll heaven bearing.
-			</p>
 
 		</div>
 		<!-- /END SINGLE SERVICE -->
@@ -516,9 +510,6 @@
 			<h3>Livraison au Cameroun</h3>
 
 			<!-- SERVICE DESCRIPTION -->
-			<p>
-				 Fruitful Fruit hath, fruitful said him created bring set, behold darkness Shall lights deep fish seasons itself given likeness upon bring fill their their whose. Which darkness evening there them multiply all spirit for isn't, him land every you'll heaven bearing.
-			</p>
 
 		</div>
 		<!-- /END SINGLE SERVICE -->
