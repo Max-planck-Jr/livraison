@@ -81,12 +81,7 @@ class ColisController extends Controller
 
         try{
             $colis->save();
-
-            $month = Carbon::now()->month;
-
-            $pdf = PDF::loadView('colis.deposit_invoice', ["colis" => $colis, "month" => $month]);
-            return $pdf->stream('colis.pdf');
-            //return back()->withSuccess("Le colis a enregistré avec succès.");
+            return back()->withSuccess("Le colis a enregistré avec succès.");
 
         }catch(Exception $e){
             Log::error($e->getMessage());
@@ -115,7 +110,11 @@ class ColisController extends Controller
         $colis->statut = "Envoyé";
         $colis->save();
 
-        return back()->withSuccess("Le colis a bien été envoyé.");
+        $month = Carbon::now()->month;
+
+        $pdf = PDF::loadView('colis.deposit_invoice', ["colis" => $colis, "month" => $month]);
+        return $pdf->stream('colis.pdf');
+        //return back()->withSuccess("Le colis a bien été envoyé.");
     }
 
     /**

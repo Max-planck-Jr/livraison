@@ -21,7 +21,7 @@
         </div>
         <br />
         <br />
-        <h1 style="text-align: center">Feuille d'envoie colis : {{ $month }} / 2019</h1>
+        <h1 style="text-align: center">Feuille d'envoi colis : {{ $month }} / 2019</h1>
         <br />
         <p>
             <b>Noms et prénoms de l'expéditeur : </b> {{ $colis->client->firstName }} {{ $colis->client->lastName }} <br />

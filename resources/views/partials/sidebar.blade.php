@@ -62,18 +62,18 @@
             </a>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link " href="{{ route('tarifs.index') }}">
-                <i class="fas fa-dollar-sign text-blue"></i> Gérer les tarifs
-            </a>
-        </li>
-
         @if (auth()->user()->accountType->code == "ADM")
             <li class="nav-item">
-                <a class="nav-link " href="{{ route('conflits.index') }}">
-                    <i class="fa fa-fire text-blue" aria-hidden="true"></i> Gérer les conflits
+                <a class="nav-link " href="{{ route('tarifs.index') }}">
+                    <i class="fas fa-dollar-sign text-blue"></i> Gérer les tarifs
                 </a>
             </li>
         @endif
+
+        <li class="nav-item">
+            <a class="nav-link " href="{{ route('conflits.index') }}">
+                <i class="fa fa-fire text-blue" aria-hidden="true"></i> Gérer les conflits
+            </a>
+        </li>
     </ul>
 </div>

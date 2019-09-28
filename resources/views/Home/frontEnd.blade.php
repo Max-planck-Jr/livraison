@@ -143,12 +143,12 @@
 
 					<!-- WELCOM MESSAGE -->
 					<h1 class="intro">ZedLogistics votre facilitateur dans les services de logistique et de transport </h1>
-					<h5>Envoyer des produits en du Cameroun vers la Suisse et vice versa</h5>
+					<h5>Envoyez des produits du Cameroun vers la Suisse et vice versa !!! </h5>
 
 					<!-- BUTTON -->
 					<div style="display:inline-block" class="buttons" id="download-button">
 
-						<a href="#brief1" class="btn btn-default btn-lg standard-button"><i class="icon_lightbulb_alt"></i>Qui sommes nous ?</a>
+						<a href="#brief1" class="btn btn-default btn-lg standard-button"><i class="icon_lightbulb_alt"></i>Qui sommes-nous ?</a>
 
 					</div>
                     <!-- /END BUTTONS -->
@@ -213,8 +213,7 @@
                 <a data-toggle="modal" data-target="#exampleModalCenter">
                     <div class="single-package">
 
-                        <h3 class="package-heading main-color">
-                        Tous les tarifs </h3>
+                        <h3 class="package-heading main-color">Tous les tarifs </h3>
 
                         <div class="price">
                             <h2><span class="month">Voir tous</span></h2>
@@ -259,9 +258,9 @@
 
 			<!-- FEATURE LIST -->
 			<ul class="feature-list">
-				<li><i class="icon_check_alt2"></i> L'achat des produits en Suisse</li>
 				<li><i class="icon_check_alt2"></i> Le transport securisé de colis</li>
-				<li><i class="icon_check_alt2"></i> La livraison au Cameroun</li>
+                <li><i class="icon_check_alt2"></i> La livraison au Cameroun</li>
+                <li><i class="icon_check_alt2"></i> La livraison en Suisse</li>
 			</ul>
 
 		</div>
