@@ -15,17 +15,20 @@
             </div>
             <div style="text-align: right; margin-top: -80px">
                 Téléphone: <br>
-                <b>Suisse : </b> 004 1 765809596 <br>
-                <b>Cameroun : </b> 00237 697212165 / 00237693986131
+                <b>Belgique : </b> +32 765809596 <br>
+                <b>France : </b> +33 697212165 / 023259763
             </div>
         </div>
         <br />
         <br />
-        <h1 style="text-align: center">Feuille d'envoi colis : {{ $month }} / 2019</h1>
+        <h1 style="text-align: center">Feuille d'envoi colis : {{ $month }} / 2024</h1>
         <br />
         <p>
-            <b>Noms et prénoms de l'expéditeur : </b> {{ $colis->client->firstName }} {{ $colis->client->lastName }} <br />
-            <b>Noms et prénoms de destinataire : </b> {{ $colis->receiver->firstName }} {{ $colis->receiver->lastName }} <br />
+            <b>Noms et prénoms de l'expéditeur : </b> {{ $colis->user->first_name }} {{ $colis->user->last_name }} <br />
+            <b>Pseudo de l'expéditeur : </b> {{ $colis->user->login }} <br />
+            <b>Adresse de l'expéditeur : </b> {{ $colis->user->address }} <br />
+            <b>Noms et prénoms de destinataire : </b> {{ $colis->receiver->first_name }} {{ $colis->receiver->last_name }} <br />
+            <b>Adresse de destinataire : </b> {{ $colis->user->address }} <br />
             <b>CNI N° </b> {{ $colis->receiver->cni }}
         </p>
         <br />

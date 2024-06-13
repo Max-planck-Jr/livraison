@@ -1,5 +1,5 @@
 @extends('Layouts.template')
-@section('title', 'Gérer les colis')
+@section('title', 'Gérer les catégories de colis')
 @section('content')
     <div class="container">
         <div class="card">
@@ -7,15 +7,15 @@
                 <div class="row">
                     <div class="col-md-8">
                         <h3 class="mb-0">
-                            Gérer les tarifs
+                            Gérer les catégories de colis
                         </h3>
                         <p class="text-sm mb-0">
-                            Gérer les tarifs à partir de cette interface
+                            Gérer les catégories à partir de cette interface
                         </p>
                     </div>
 
                     <div class="col-md-4">
-                        <a href="{{ route('tarifs.create') }}" style="float: right;" class="btn-sm btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Nouveau tarif</a>
+                        <a href="{{ route('tarifs.create') }}" style="float: right;" class="btn-sm btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Nouvelle catégorie</a>
                     </div>
                 </div>
             </div>
@@ -28,7 +28,7 @@
                                 <tr>
                                     <th>#</th>
                                     <th>Libellé</th>
-                                    <th>Montant</th>
+                                    <th>Montant Approximatif</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>

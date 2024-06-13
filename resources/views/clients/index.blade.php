@@ -29,8 +29,8 @@
                                     <th>#</th>
                                     <th>Nom</th>
                                     <th>Prenom</th>
-                                    <th>Sexe</th>
-                                    <th>CNI</th>
+                                    <th>Pseudo</th>
+                                    <th>Pays</th>
                                     <th>Téléphone</th>
                                     <th>Email</th>
                                     <th>Adresse</th>
@@ -41,13 +41,13 @@
                                 @foreach ($clients as $client)
                                     <tr>
                                         <td>{{ $client->id }}</td>
-                                        <td>{{ $client->firstName }}</td>
-                                        <td>{{ $client->lastName }}</td>
-                                        <td>{{ $client->gender }}</td>
-                                        <td>{{ $client->cni }}</td>
+                                        <td>{{ $client->first_name }}</td>
+                                        <td>{{ $client->last_name }}</td>
+                                        <td>{{ $client->login }}</td>
+                                        <td>{{ $client->country }}</td>
                                         <td>{{ $client->phone }}</td>
                                         <td>{{ $client->email }}</td>
-                                        <td>{{ $client->adress }}</td>
+                                        <td>{{ $client->address }}</td>
                                         <td>
                                             <a href="{{ route('clients.edit', $client->id) }}" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
                                             <form method="POST" action="{{ route('clients.destroy', $client->id) }}" style="display: inline;">

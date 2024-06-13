@@ -41,15 +41,15 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        $users = Client::all();
+        $users = User::all();
         $colis = Colis::all();
         $feedbacks = Feedback::all();
         $conflits = Incident::all()->where("statut", "==", "Résolu");
-        $incidents = Incident::all()->where("statut", "==", "En attente");
+        $incidents = Incident::where("message",0)->get();
         foreach($incidents as $i)
         {
             $i->colis_id = Colis::find($i->colis_id);
-            $i->status = Client::find($i->colis_id->client_id);
+            $i->status = User::find($i->colis_id->user_id);
         }
         return view('Home.dashboard', compact('users', 'colis', 'conflits', 'incidents', 'feedbacks'));
     }
@@ -94,8 +94,9 @@ class HomeController extends Controller
 
     public function suggestions()
     {
-        $suggestions = Feedback::all()->where("state", "==", "0");
-        return view("Home.suggestion", compact("suggestions"));
+        $incidents = Incident::where("message",0)->get();
+        // $colis = Colis::where("country", auth()->user()->country)->get();
+        return view("Home.suggestion", compact("incidents"));
     }
 
     public function changeSuggestionState($id)
@@ -107,5 +108,13 @@ class HomeController extends Controller
             "message" => "Etat modifié",
             "label" => "success"
         ]);
+    }
+
+    public function message()
+    {
+        $colis = Colis::all();
+        // return view("incidents.create", compact("colis"));
+        // $incidents = Incident::all();
+         return view("home.message", compact("colis"));
     }
 }

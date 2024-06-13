@@ -1,5 +1,5 @@
 @extends('Layouts.template')
-@section('title', 'Gérer les conflits')
+@section('title', 'Gérer les incidents')
 @section('content')
     <div class="container">
         <div class="card">
@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-md-8">
                         <h3 class="mb-0">
-                            Gérer les conflits
+                            Gérer les incidents
                         </h3>
                         <p class="text-sm mb-0">
                             Gérer les conflits à partir de cette interface
@@ -15,7 +15,7 @@
                     </div>
 
                     <div class="col-md-4">
-                        <a href="{{ route('conflits.create') }}" style="float: right;" class="btn-sm btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Nouveau conflit</a>
+                        <a href="{{ route('conflits.create') }}" style="float: right;" class="btn-sm btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Nouvel incident</a>
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                                 @foreach ($incidents as $conflit)
                                     <tr>
                                         <td>{{ $conflit->id }}</td>
-                                        <td>{{ $conflit->coli->client->firstName }} {{ $conflit->coli->client->lastName }}</td>
+                                        <td>{{ $conflit->coli->user->first_name }} {{ $conflit->coli->user->last_name }}</td>
                                         <td>{{ $conflit->coli->nom }}</td>
                                         <td>{{ $conflit->titre }}</td>
                                         <td>{{ $conflit->motif }}</td>

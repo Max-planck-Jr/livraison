@@ -14,7 +14,7 @@
         </div>
         <br />
         <br />
-        <h1 style="text-align: center">Zed-Logistics</h1>
+        <h1 style="text-align: center">Logistics</h1>
 
         <br />
         <br />
@@ -24,7 +24,7 @@
         <br />
         <h3 style="text-align: center">Dédommagement</h3>
         <p style="text-align: justify">
-            L'entreprise Zed-Logistics s'engage en raison du dommage causé à monsieur {{ $incident->coli->client->firstName }} {{ $incident->coli->client->lastName }} pour le coli:
+            L'entreprise Logistics s'engage en raison du dommage causé à monsieur {{ $incident->coli->user->first_name }} {{ $incident->coli->user->last_name }} pour le coli:
             <br />
             <div style="margin-left: 50px; text-align: start;">
                 <b>Nom : </b>{{ $incident->coli->nom }} <br />

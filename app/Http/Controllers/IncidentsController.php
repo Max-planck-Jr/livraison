@@ -17,7 +17,7 @@ class IncidentsController extends Controller
      */
     public function index()
     {
-        $incidents = Incident::all();
+        $incidents = Incident::where("message",1)->get();
         return view("incidents.index", compact("incidents"));
     }
 
@@ -44,11 +44,15 @@ class IncidentsController extends Controller
         $incident->motif = request("motif");
         $incident->colis_id = request("colis_id");
         $incident->titre = request("titre");
-
+        if( auth()->user()->accountType->code == "CLT"){
+        $incident->message = 0;
+        }else{
+            $incident->message = 1;   
+        }
         try{
 
             $incident->save();
-            return back()->withSuccess("Le conflit a été sauvegardé avec succès.");
+            return back()->withSuccess("Envoyé avec succès.");
 
         }catch(Exception $e){
             Log::error($e->getMessage());
@@ -59,12 +63,13 @@ class IncidentsController extends Controller
     }
 
     public function generateLetter($id){
-        $incident = Incident::with("coli.client")->findOrFail($id);
+        $incident = Incident::with("coli.user")->findOrFail($id);
         if($incident->statut == "En attente") return back()->withErrors([
             "message" => "Le conflit doit être marqué comme résolu."
         ]);
-        $pdf = PDF::loadView('incidents.letter', ["incident" => $incident]);
-        return $pdf->stream('invoice.pdf');
+        return view('incidents.letter', ["incident" => $incident]);
+        // $pdf = PDF::loadView('incidents.letter', ["incident" => $incident]);
+        // return $pdf->stream('invoice.pdf');
     }
 
     /**

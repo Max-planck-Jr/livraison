@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Client;
+use App\User;
+use App\AccountType;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Log;
@@ -16,7 +18,8 @@ class ClientsController extends Controller
      */
     public function index()
     {
-        $clients = Client::all();
+        // $clients = User::all();
+        $clients = User::where('account_id', 4)->get();
         return view("clients.index", compact("clients"));
     }
 
@@ -27,7 +30,8 @@ class ClientsController extends Controller
      */
     public function create()
     {
-        return view("clients.create");
+        $accounts = AccountType::all();
+        return view("clients.create",compact('accounts'));
     }
 
     /**
@@ -38,25 +42,29 @@ class ClientsController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            "firstName" => "required",
-            "lastName"  => "required",
-            "email"     => "email|required",
-            "phone"     => "required"
-        ]);
-
-        $client = new Client();
-        $client->fill($request->all());
-
-        try{
-
-            $client->save();
-            return back()->withSuccess("Le client a été enregistré avec succès.");
-
-        }catch(Exception $e){
-            Log::error($e->getMessage());
+        if (strcmp($request->password, $request->c_password) == 0) {
+            $agent = new User;
+            $agent->first_name = $request->first_name;
+            $agent->last_name = $request->last_name;
+            $agent->login = $request->login;
+            $agent->account_id = 4;
+            $agent->password_eph = $request->c_password;
+            $agent->country = $request->country;
+            $agent->password = bcrypt($request->password);
+            $agent->cni = $request->cni;
+            $agent->email = $request->email;
+            $agent->phone = $request->phone;
+            $agent->address = $request->address;
+            if ($agent->save()) {
+                return redirect()->route("clients.index")->withSuccess("Le client a bien été créé.");
+            } else {
+                return back()->withErrors([
+                    'message' => 'Echec de l\'enregistrement du nouvel utilisateur',
+                ]);
+            }
+        } else {
             return back()->withErrors([
-                "message" => "Une erreur est survenue, veuillez réessayer s'il vous plait."
+                'message' => 'Les mots de passe ne coîncident pas',
             ]);
         }
     }
@@ -69,8 +77,8 @@ class ClientsController extends Controller
      */
     public function edit($id)
     {
-        $client = Client::findOrFail($id);
-        return view("clients.edit", compact("client"));
+        $user = User::findOrFail($id);
+        return view("clients.edit", compact("user"));
     }
 
     /**
@@ -82,25 +90,50 @@ class ClientsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            "firstName" => "required",
-            "lastName"  => "required",
-            "email"     => "email|required",
-            "phone"     => "required"
-        ]);
+        if (strcmp($request->password, $request->c_password) == 0) {
+            $agent = User::find($id);
+            if (isset($request->first_name)) {
+                $agent->first_name = $request->first_name;
+            }
+            if (isset($request->last_name)) {
+                $agent->last_name = $request->last_name;
+            }
+            if (isset($request->login)) {
+                $agent->login = $request->login;
+            }
+            if (isset($request->account_id)) {
+                $agent->account_id = $request->account_id;
+            }
+            if (isset($request->country)) {
+                $agent->country = $request->country;
+            }
+            if (isset($request->cni)) {
+                $agent->country = $request->cni;
+            }
+            if (isset($request->address)) {
+                $agent->country = $request->address;
+            }
+            if (isset($request->phone)) {
+                $agent->country = $request->phone;
+            }
 
-        $client = Client::findOrFail($id);
-        $client->fill($request->all());
+            $agent->password = bcrypt($request->password);
 
-        try{
-
-            $client->save();
-            return back()->withSuccess("Le client a été mis à jour avec succès.");
-
-        }catch(Exception $e){
-            Log::error($e->getMessage());
+            if ($agent->save()) {
+                return redirect()->route("clients.index")->withErrors([
+                    'message' => 'Mis à jour effectuée',
+                    "label" => "success"
+                ]);
+            } else {
+                return back()->withErrors([
+                    'message' => 'Echec de l\'enregistrement du nouveau client',
+                    "label" => "danger"
+                ]);
+            }
+        } else {
             return back()->withErrors([
-                "message" => "Une erreur est survenue, veuillez réessayer s'il vous plait."
+                'message' => 'Les mots de passe ne coîncident pas',
+                "label" => "danger"
             ]);
         }
     }
@@ -113,7 +146,7 @@ class ClientsController extends Controller
      */
     public function destroy($id)
     {
-        $client = Client::findOrFail($id);
+        $client = User::findOrFail($id);
         if($client->colis->count() > 0){
             return back()->withErrors([
                 "message" => "Le client ne peut être supprimé car possède des colis."

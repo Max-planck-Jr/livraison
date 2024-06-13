@@ -20,9 +20,9 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="form-control-label" for="exampleFormControlInput1">Client</label>
-                                        <select name="client_id" disabled class="form-control">
+                                        <select name="user_id" disabled class="form-control">
                                             @foreach ($clients as $client)
-                                                <option value="{{ $client->id }}" {{ $client->id == $colis->client->id ? "selected" : "" }}>{{ $client->firstName }} {{ $client->lastName }} <small>{{ $client->email }}</small></option>
+                                                <option value="{{ $client->id }}" {{ $client->id == $colis->user->id ? "selected" : "" }}>{{ $client->first_name }} {{ $client->last_name }} <small>{{ $client->email }}</small></option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -39,8 +39,8 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label>Nature</label>
-                                        <input type="text" class="form-control" disabled value="{{ $colis->nature }}" name="nature">
+                                        <label>Hauteur</label>
+                                        <input type="text" class="form-control" disabled value="{{ $colis->hauteur }}" name="nature">
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@
 
                             <div class="row">
                                 <div class="col md-12">
-                                    <label>Contenance</label>
+                                    <label>Description</label>
                                     <textarea name="contenance" disabled id="" cols="30" rows="5" class="form-control">{{ $colis->contenance }}</textarea>
                                 </div>
                             </div>
@@ -72,20 +72,20 @@
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="form-control-label" for="exampleFormControlInput1">Moyen d'envoi</label>
-                                        <select name="moyen_envoi" disabled class="form-control">
-                                            <option value="Bâteau">Bâteau</option>
-                                            <option value="Avion">Avion</option>
-                                            <option value="Train">Train</option>
+                                        <select name="fragilite" disabled class="form-control">
+                                            <option value="Fragile">Fragile</option>
+                                            <option value="Tres">Très Fragile</option>
+                                            <option value="Normale">Normale</option>
                                         </select>
                                     </div>
                                 </div>
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="exampleFormControlInput1">Tarif perçu</label>
+                                        <label class="form-control-label" for="exampleFormControlInput1">Catégorie</label>
                                         <select name="tarif_id" id="" class="form-control">
                                             @foreach ($tarifs as $tarif)
-                                                <option value="{{ $tarif->id }}" {{ $tarif->id == $colis->tarif_id ? "selected" : "" }}>{{ $tarif->libelle }} - {{ $tarif->montant }}</option>
+                                                <option value="{{ $tarif->id }}" {{ $tarif->id == $colis->tarif_id ? "selected" : "" }}>{{ $tarif->libelle }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -93,7 +93,7 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="exampleFormControlInput1">Valeur en euros</label>
+                                        <label class="form-control-label" for="exampleFormControlInput1">Prix/€</label>
                                         <input type="number" class="form-control" disabled id="exampleFormControlInput1" value="{{ $colis->valeur_euro }}" name="valeur_euro">
                                     </div>
                                 </div>

@@ -32,11 +32,17 @@ class AgentController extends Controller
             $agent->account_id = $request->account_id;
             $agent->country = $request->country;
             $agent->password = bcrypt($request->password);
+            $agent->cni = $request->cni;
+            $agent->email = $request->email;
+            $agent->phone = $request->phone;
+            $agent->address = $request->address;
+            $agent->password_eph = $request->c_password;
+            // dd($agent->password_eph);
             if ($agent->save()) {
-                return redirect()->route("agents")->withSuccess("L'agent a bien été créé.");
+                return redirect()->route("agents")->withSuccess("L'utilisateur a bien été créé.");
             } else {
                 return back()->withErrors([
-                    'message' => 'Echec de l\'enregistrement du nouvel agent',
+                    'message' => 'Echec de l\'enregistrement du nouvel utilisateur',
                 ]);
             }
         } else {
@@ -72,6 +78,15 @@ class AgentController extends Controller
             if (isset($request->country)) {
                 $agent->country = $request->country;
             }
+            if (isset($request->cni)) {
+                $agent->country = $request->cni;
+            }
+            if (isset($request->address)) {
+                $agent->country = $request->address;
+            }
+            if (isset($request->phone)) {
+                $agent->country = $request->phone;
+            }
 
             $agent->password = bcrypt($request->password);
 
@@ -96,14 +111,22 @@ class AgentController extends Controller
 
     public function destroy($id)
     {
+        $client = User::findOrFail($id);
+        
         if (auth()->user()->id == $id) {
             return redirect()->back()->withErrors([
                 "message" => "Vous ne pouvez pas supprimé votre compte",
             ]);
         }
+        if($client->colis->count() > 0){
+            return redirect()->back()->withErrors([
+                "message" => "L utilisateur ne peut être supprimé car possède des colis."
+            ]);
+        }
         if (User::findOrFail($id)->delete()) {
             return redirect()->back()->withSuccess("Suppression effectuée");
         }
+        
         return redirect()->back()->withErrors([
             "message" => "Erreur lors de la suppression",
         ]);

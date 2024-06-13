@@ -8,7 +8,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <!-- SITE TITLE -->
-<title>ZED LOGISTICS</title>
+<title>MARC LOGISTICS</title>
 
 <!-- =========================
       FAV AND TOUCH ICONS
@@ -127,7 +127,7 @@
 		<div class="only-logo">
 			<div class="navbar">
 				<div class="navbar-header">
-					<img src="{{ asset('logo.jpeg') }}" alt="">
+					<img src="{{ asset('planet.png') }}" alt="">
 				</div>
 			</div>
 		</div> <!-- /END ONLY LOGO ON HEADER -->
@@ -142,8 +142,8 @@
 				<div class="intro-section">
 
 					<!-- WELCOM MESSAGE -->
-					<h1 class="intro">ZedLogistics votre facilitateur dans les services de logistique et de transport </h1>
-					<h5>Envoyez des produits du Cameroun vers la Suisse et vice versa !!! </h5>
+					<h1 class="intro">MarcLogistics votre facilitateur dans les services de logistique et de transports </h1>
+					<h5>Envoyez des colis partout dans le monde !!! </h5>
 
 					<!-- BUTTON -->
 					<div style="display:inline-block" class="buttons" id="download-button">
@@ -173,12 +173,12 @@
         <div class="section-header wow fadeIn animated" data-wow-offset="10" data-wow-duration="1.5s">
 
             <!-- SECTION TITLE -->
-            <h2 class="white-text">Nos Tarifs</h2>
+            <h2 class="white-text">Nos Catégories</h2>
             <div class="colored-line">
             </div>
 
             <div class="section-description">
-                 ZedLogistics met un point d'honneur à vous fournir un rapport qualité/prix sans égal
+                 Logistics met un point d'honneur à vous fournir un rapport qualité/prix sans égal
             </div>
 
             <div class="colored-line">
@@ -198,7 +198,7 @@
                     {{ $tarif->libelle }} </h3>
 
                     <div class="price">
-                        <h2><span class="sign">Frs</span>{{ $tarif->montant }} </h2>
+                        <h2><span class="sign"></span> </h2>
                     </div>
 
                 </div>
@@ -238,7 +238,7 @@
 		<!-- PHONES IMAGE -->
 		<div class="col-md-6 wow fadeInRight animated" data-wow-offset="10" data-wow-duration="1.5s">
 			<div class="phone-image">
-				<img src="\front/files/images/2-iphone-left.png" alt="">
+				<img src="\front/files/images/planet.png" alt="">
 			</div>
 		</div>
 
@@ -252,15 +252,15 @@
 			</div>
 
 			<p>
-                ZedLogistics est une jeune entreprise qui s'est donnée pour objectif de permettre la livraison des produits achetés en Suisse sur tout l'étendu du territoire camerounais. <br />
-                Elles se spécialise dans :
+                MarcLogistics est une jeune entreprise qui s'est donnée pour objectif de permettre la livraison des produits partout dans le monde. <br />
+                Elle se spécialise dans :
 			</p>
 
 			<!-- FEATURE LIST -->
 			<ul class="feature-list">
 				<li><i class="icon_check_alt2"></i> Le transport securisé de colis</li>
-                <li><i class="icon_check_alt2"></i> La livraison au Cameroun</li>
-                <li><i class="icon_check_alt2"></i> La livraison en Suisse</li>
+                <li><i class="icon_check_alt2"></i> La livraison avec tracabilité</li>
+                <li><i class="icon_check_alt2"></i> La livraison avec notifications</li>
 			</ul>
 
 		</div>
@@ -317,8 +317,8 @@
 			</div>
 
 			<p>
-				Vidéo présentation de la structure ZedLogistics.<br/><br/>
-				Qui sommes nous ? Que faisons nous ? Pourquoi nous faire confiance ?
+				Vidéo présentation de la structure MarcLogistics.<br/><br/>
+				Qui sommes nous ? Que faisons-nous ? Pourquoi nous faire confiance ?
 			</p>
 
 
@@ -352,11 +352,11 @@
 				<!-- IMAGE -->
 				<div class="image">
 					<!-- i class=" icon_quotations"></i -->
-					<img src="\front/files/images/clients-pic/3.jpg" alt="">
+					<img src="\front/files/images/clients-pic/4.jpg" alt="">
 				</div>
 
 				<div class="message">
-                    Depuis que j'ai connu Zed-Logistics je ne souffre dans mes affaires, je paie aisément mes produits en Suisse et je les fais parvenir au Cameroun à petit. Bref, mes affaire se marchent à merveille désormais Merci à vous !
+                    Depuis que j'ai connu MarcLogistics, je ne souffre plus dans mes affaires. Je paie aisément mes produits en Suisse et je les fais parvenir en Belgique à petit prix. Bref, mes affaires marchent à merveille désormais. Merci à vous !
 				</div>
 
 				<div class="white-line">
@@ -364,10 +364,10 @@
 
 				<!-- INFORMATION -->
 				<div class="name">
-					John Doe
+					Jean Baptiste
 				</div>
 				<div class="company-info">
-					CEO, AbZ Network
+					Commerçant
 				</div>
 
 			</div>
@@ -379,11 +379,11 @@
 				<!-- IMAGE -->
 				<div class="image">
 					<!-- i class=" icon_quotations"></i -->
-					<img src="\front/files/images/clients-pic/1.jpg" alt="">
+					<img src="\front/files/images/clients-pic/6.jpg" alt="">
 				</div>
 
 				<div class="message">
-                    Le plus intéressant avec Zed-Logistics c'est qualité de ses services, le temps de réaction, bravo à vous !
+                    Le plus intéressant avec Marc-Logistics c'est qualité de ses services, le temps de réaction, bravo à vous !
 				</div>
 
 				<div class="white-line">
@@ -391,10 +391,10 @@
 
 				<!-- INFORMATION -->
 				<div class="name">
-					John Doe
+					Olivier 
 				</div>
 				<div class="company-info">
-					CEO, AbZ Network
+					Entrepreneur
 				</div>
 
 			</div>
@@ -406,11 +406,11 @@
 				<!-- IMAGE -->
 				<div class="image">
 					<!-- i class=" icon_quotations"></i -->
-					<img src="\front/files/images/clients-pic/2.jpg" alt="">
+					<img src="\front/files/images/clients-pic/5.jpg" alt="">
 				</div>
 
 				<div class="message">
-                    J'avais de graves problèmes à l'époque lorsque je voulais envoyer des colis à destination du Cameroun. Mais depuis que j'ai connu Zed-Logistics, j'envoie en toute sérénité des colis au Cameroun et dans des délais très courts.
+                    J'avais de graves problèmes à l'époque lorsque je voulais envoyer des colis à destination du Cameroun. Mais depuis que j'ai connu MarcLogistics, j'envoie en toute sérénité des colis au Cameroun et dans des délais très courts.
 				</div>
 
 				<div class="white-line">
@@ -418,10 +418,10 @@
 
 				<!-- INFORMATION -->
 				<div class="name">
-					John Doe
+					Roland
 				</div>
 				<div class="company-info">
-					CEO, AbZ Network
+					Enseignant
 				</div>
 
 			</div>
@@ -456,7 +456,7 @@
 		<div class="colored-line">
 		</div>
 		<div class="section-description">
-			Le champ d'action de ZedLogistics s'étend sur les services suivants
+			Le champ d'action de MarcLogistics s'étend sur les services suivants
 		</div>
 		<div class="colored-line">
 		</div>
@@ -475,7 +475,7 @@
 			</div>
 
 			<!-- SERVICE HEADING -->
-			<h3>Achat de produit en Suisse</h3>
+			<h3>Tracabilité des colis</h3>
 
 			<!-- SERVICE DESCRIPTION -->
 
@@ -507,7 +507,7 @@
 			</div>
 
 			<!-- SERVICE HEADING -->
-			<h3>Livraison au Cameroun</h3>
+			<h3>Livraison partout dans plusieurs pays d Europe</h3>
 
 			<!-- SERVICE DESCRIPTION -->
 
@@ -543,18 +543,19 @@
 						<div class="row">
                             <div class="col-sm-6 col-md-6 col-lg-6">
                                 <p>
-                                    Téléphone: (+237)698473738 / (+237) 677564533 <br>
-                                    Email: ZedLogistics@society.com <br>
-                                    Fax: 378426874 <br>
-                                    BP: 34727 Ydé
+                                    
+                                    Belgique (+32) 045612356 /(+32) 457896589 <br>
+									Suisse : 0041 765809596<br>
+                                    Email: info@Marclogistics.com <br>
+                                    BP: 1050 Ixelles
                                 </p>
                             </div>
                             <div class="col-sm-6 col-md-6 col-lg-6 pull-right">
                                 <p>
                                     Addresse: <br/>
-                                    <small>Yaoundé, Ancien Garanti Nsam <br/>
-                                    Douala, Bonamoussadi <br />
-                                    Bafoussam, Face au brasserie</small>
+                                    <small>Bruxelles, Boulevard du triomphe <br/>
+                                    Ixelles, place de la couronne <br />
+                                    </small>
                                 </p>
                             </div>
                         </div>
@@ -587,7 +588,7 @@
 						<input type="email" name="email" id="subscriber-email" placeholder="Your Email" class="form-control input-box">
 
 						<!-- SUBSCRIBE BUTTON -->
-						<button type="submit" id="subscribe-button" class="btn btn-default standard-button">Subscribe</button>
+						<button type="submit" id="subscribe-button" class="btn btn-default standard-button">Souscrire</button>
 
 					</form>
 					<!-- /END MAILCHIMP FORM STARTS -->
@@ -679,7 +680,7 @@
 	<!-- /END CONTACT BOX -->
 
 	<!-- LOGO -->
-	<img src="{{ asset('logo.jpeg') }}" alt="LOGO" class="responsive-img">
+	<img src="{{ asset('terres.png') }}" alt="LOGO" class="responsive-img">
 
 	<!-- SOCIAL ICONS -->
 	<ul class="social-icons">
@@ -694,7 +695,7 @@
 
 	<!-- COPYRIGHT TEXT -->
 	<p class="copyright">
-		©2019 ZedLogistics, Tous droits reservés
+		©2024 MarcLogistics, Tous droits reservés
 	</p>
 
 </div>

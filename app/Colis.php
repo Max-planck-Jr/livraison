@@ -5,12 +5,13 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 class Colis extends Model
 {
-    protected $fillable = ["client_id", "nature", "contenance", "nom", "quantite", "valeur_euro", "poids", "moyen_envoi", "country", "date_arrivee", "tarif_id", "receiver_id"];
-    public function client(){
-        return $this->belongsTo(Client::class);
+    protected $fillable = ["user_id", "nature", "contenance", "nom", "quantite", "fragilite", "valeur_euro", "poids", "longueur", "hauteur", "largeur", "moyen_envoi", "country", "date_arrivee", "tarif_id", "receiver_id","who"];
+
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 
     public function receiver(){
-        return $this->belongsTo(Client::class, "receiver_id");
+        return $this->belongsTo(User::class, "receiver_id");
     }
 }

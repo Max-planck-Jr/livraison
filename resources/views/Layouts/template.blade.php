@@ -38,7 +38,7 @@
             <!-- Brand -->
             <div class="sidenav-header d-flex align-items-center">
                 <a class="navbar-brand" href="{{ route('dashboard') }}">
-                    Zed-Logistics
+                    MarcExpress
                 </a>
                 <div class="ml-auto">
                     <!-- Sidenav toggler -->

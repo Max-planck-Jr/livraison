@@ -26,7 +26,7 @@
 
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="exampleFormControlInput1">Montant</label>
+                                        <label class="form-control-label" for="exampleFormControlInput1">Montant approximatif</label>
                                         <input type="text" class="form-control" value="{{ $tarif->montant }}" id="exampleFormControlInput1" name="montant">
                                     </div>
                                 </div>

@@ -1,5 +1,5 @@
 @extends('Layouts.template')
-@section('title', 'Listes des employés')
+@section('title', 'Listes des utilisateurs')
 @section('content')
 <div class="container">
         <div class="card">
@@ -7,15 +7,15 @@
                 <div class="row">
                     <div class="col-md-8">
                         <h3 class="mb-0">
-                            Gérer les agents
+                            Gérer les utilisateurs
                         </h3>
                         <p class="text-sm mb-0">
-                            Listes des agents de l'agence
+                            Listes des utilisateurs de l'agence
                         </p>
                     </div>
 
                     <div class="col-md-4">
-                        <a href="{{ route('newAgent') }}" style="float: right;" class="btn-sm btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Nouvel agent</a>
+                        <a href="{{ route('newAgent') }}" style="float: right;" class="btn-sm btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i> Nouvel utilisateur</a>
                     </div>
                 </div>
             </div>

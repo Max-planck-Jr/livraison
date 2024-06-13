@@ -20,3 +20,17 @@
 <script src="{{ asset('js/plugins/datatables/js/buttons.print.min.js') }}"></script>
 <script src="{{ asset('js/plugins/datatables/js/dataTables.select.min.js') }}"></script>
 <script src="{{ asset('js/plugins/sweetalert2.min.js') }}"></script>
+<!-- Add this at the bottom of your Blade template just before the closing </body> tag -->
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var input = document.querySelector("#phone_number");
+        window.intlTelInput(input, {
+            initialCountry: "be", // Belgium
+            onlyCountries: ["be"], // Restrict to Belgium
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+        });
+    });
+</script> --}}
+
+

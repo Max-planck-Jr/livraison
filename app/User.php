@@ -18,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name', 'login', 'password',
+        'first_name', 'last_name', 'login', 'password','password_eph', 'phone', 'cni', 'adress', 
     ];
 
     /**
@@ -41,5 +41,9 @@ class User extends Authenticatable
 
     public function accountType(){
         return $this->belongsTo(AccountType::class, "account_id");
+    }
+
+    public function colis(){
+        return $this->hasMany(Colis::class);
     }
 }

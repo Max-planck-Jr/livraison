@@ -81,11 +81,11 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="exampleFormControlInput1">Moyen d'envoi</label>
-                                        <select name="moyen_envoi" class="form-control">
-                                            <option value="Bâteau">Bâteau</option>
-                                            <option value="Avion">Avion</option>
-                                            <option value="Train">Train</option>
+                                        <label class="form-control-label" for="exampleFormControlInput1">Fragilité</label>
+                                        <select name="fragilite" class="form-control">
+                                            <option value="Fragile">Fragile</option>
+                                            <option value="Tres">Très Fragile</option>
+                                            <option value="Normale">Normale</option>
                                         </select>
                                     </div>
                                 </div>
@@ -95,7 +95,7 @@
                                         <label class="form-control-label" for="exampleFormControlInput1">Tarif perçu</label>
                                         <select name="tarif_id" id="" class="form-control">
                                             @foreach ($tarifs as $tarif)
-                                                <option value="{{ $tarif->id }}">{{ $tarif->libelle }} - {{ $tarif->montant }}</option>
+                                                <option value="{{ $tarif->id }}">{{ $tarif->libelle }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -103,7 +103,7 @@
 
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="form-control-label" for="exampleFormControlInput1">Valeur en euros</label>
+                                        <label class="form-control-label" for="exampleFormControlInput1">Prix/€</label>
                                         <input type="number" class="form-control" id="exampleFormControlInput1" value="{{ $colis->valeur_euro }}" name="valeur_euro">
                                     </div>
                                 </div>

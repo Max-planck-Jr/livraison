@@ -1,12 +1,12 @@
 @extends('Layouts.template')
-@section('title', 'Nouvel agent')
+@section('title', 'Nouvel utiilisateur')
 @section('content')
 <div class="col-xl-12 order-xl-1">
         <div class="card bg-secondary shadow">
           <div class="card-header bg-white border-0">
             <div class="row align-items-center">
               <div class="col-8">
-                <h3 class="mb-0">Nouvel agent</h3>
+                <h3 class="mb-0">Créer les comptes clients, agents et administrateurs</h3>
               </div>
               <div class="col-4 text-right">
                 <a onclick="window.location.href='javascript:history.back()'" class="btn btn-sm btn-primary" style="color:white">Retour</a>
@@ -53,13 +53,47 @@
                   </div>
                   <div class="col-lg-6">
                     <div class="form-group">
+                      <label class="form-control-label" for="input-last-name2">Cni</label>
+                      <input type="text" id="input-last-name2" required name="cni" class="form-control form-control-alternative" placeholder="cni">
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-last-name2">Adresse</label>
+                      <input type="text" id="input-last-name2" required name="address" class="form-control form-control-alternative" placeholder="Adresse">
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-last-name2">Téléphone</label>
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">+32</span>
+                        <input type="text" id="phone_number" required name="phone" class="form-control form-control-alternative" placeholder="Téléphone">
+                    </div>
+                      
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-last-name2">Email</label>
+                      <input type="email" id="input-last-name2" required name="email" class="form-control form-control-alternative" placeholder="Email">
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label class="form-control-label" for="input-last-name2">Pays</label>
+                      <input type="text" id="input-last-name2" required name="country" class="form-control form-control-alternative" placeholder="Pays">
+                    </div>
+                  </div>
+                  {{-- <div class="col-lg-6">
+                    <div class="form-group">
                       <label class="form-control-label" for="input-last-name3">Pays</label>
                       <select class="form-control form-control-alternative" name="country" id="input-last-name3">
                           <option value="Suisse">Suisse</option>
                           <option value="Cameroun">Cameroun</option>
                       </select>
                     </div>
-                  </div>
+                  </div> --}}
                   <div class="col-lg-6">
                         <div class="form-group">
                           <label class="form-control-label" for="input-last-name3">Type de compte</label>

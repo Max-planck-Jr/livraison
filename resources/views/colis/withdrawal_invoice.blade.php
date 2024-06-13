@@ -15,17 +15,17 @@
             </div>
             <div style="text-align: right; margin-top: -80px">
                 Téléphone: <br>
-                <b>Suisse : </b> 004 1 765809596 <br>
-                <b>Cameroun : </b> 00237 697212165 / 00237693986131
+                <b>Belgique : </b>+32 05464565465 <br>
+                <b>France : </b> +33 02454545 / 00237693986131
             </div>
         </div>
         <br />
         <br />
-        <h1 style="text-align: center">Feuille de retrait colis : {{ $month }} / 2019</h1>
+        <h1 style="text-align: center">Feuille de retrait colis : {{ $month }} / 2024</h1>
         <br />
         <p>
-            <b>Noms et prénoms de l'expéditeur : </b> {{ @$colis->client->firstName ?? "Non défini" }} {{ @$colis->client->lastName ?? "Non défini" }} <br />
-            <b>Noms et prénoms de destinataire : </b> {{ @$colis->receiver->firstName ?? "Non défini" }} {{ @$colis->receiver->lastName ?? "Non défini" }} <br />
+            <b>Noms et prénoms de l'expéditeur : </b> {{ @$colis->user->first_name ?? "Non défini" }} {{ @$colis->user->last_name ?? "Non défini" }} <br />
+            <b>Noms et prénoms de destinataire : </b> {{ @$colis->receiver->first_name ?? "Non défini" }} {{ @$colis->receiver->last_name ?? "Non défini" }} <br />
             <b>CNI N° </b> {{ @$colis->receiver->cni ?? "Non défini" }}
         </p>
         <br />

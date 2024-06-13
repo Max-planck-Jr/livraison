@@ -24,6 +24,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('colis', 'ColisController');
     Route::get("colis/{id}/send", "ColisController@send")->name("colis.send");
     Route::get("colis/{id}/remove", "ColisController@remove")->name("colis.get");
+    Route::get("/coliss", "ColisController@tracer")->name("tracer");
+    Route::get("/message", "HomeController@message")->name("message");
 
     Route::resource('tarifs', 'TarifsController');
 

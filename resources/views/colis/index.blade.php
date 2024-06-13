@@ -41,8 +41,8 @@
                                 @foreach ($colis as $coli)
                                     <tr>
                                         <td>{{ $coli->id }}</td>
-                                        <td>{{ $coli->client->firstName }} {{ $coli->client->lastName }}</td>
-                                        <td>{{ $coli->receiver ? $coli->receiver->firstName." ".$coli->receiver->lastName : "Non défini" }}</td>
+                                        <td>{{ $coli->user->first_name }} {{ $coli->user->last_name }}</td>
+                                        <td>{{ $coli->receiver ? $coli->receiver->first_name." ".$coli->receiver->last_name : "Non défini" }}</td>
                                         <td>{{ $coli->nom }}</td>
                                         <td>{{ $coli->date_entree }}</td>
                                         <td>{{ $coli->date_arrivee }}</td>

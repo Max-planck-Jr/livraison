@@ -38,21 +38,22 @@
         @if (auth()->user()->accountType->code == "ADM")
             <li class="nav-item">
                 <a class="nav-link " href="{{ route('agents') }}">
-                    <i class="fa fa-user-secret text-blue"></i> Gestion des agents
+                    <i class="fa fa-user-secret text-blue"></i> Gestion des utilisateurs
                 </a>
             </li>
 
 
             <li class="nav-item">
                 <a class="nav-link " href="{{ route('suggestions') }}">
-                    <i class="fa fa-comment text-blue"></i> Suggestions des utilisateurs
+                    <i class="fa fa-comment text-blue"></i> Gestion des message
                 </a>
             </li>
         @endif
-
+        
+        @if (auth()->user()->accountType->possible == 2 || auth()->user()->accountType->possible == 1)
         <li class="nav-item">
             <a class="nav-link " href="{{ route('clients.index') }}">
-                <i class="fa fa-users text-primary" aria-hidden="true"></i> Gérer les clients
+                <i class="fa fa-users text-primary" aria-hidden="true"></i> Gestion les clients
             </a>
         </li>
 
@@ -61,18 +62,41 @@
                 <i class="fas fa-box text-blue"></i> Gérer les colis
             </a>
         </li>
+        @endif
+
+        @if (auth()->user()->accountType->code == "CLT")
+        <li class="nav-item">
+            <a class="nav-link " href="{{ route('tracer') }}">
+                <i class="fas fa-box text-blue"></i> Tracer un colis
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="{{ route('message') }}">
+                <i class="fas fa-box text-blue"></i> Enovyer un message
+            </a>
+        </li>
+        @endif
 
         @if (auth()->user()->accountType->code == "ADM")
             <li class="nav-item">
                 <a class="nav-link " href="{{ route('tarifs.index') }}">
-                    <i class="fas fa-dollar-sign text-blue"></i> Gérer les tarifs
+                    <i class="fas fa-dollar-sign text-blue"></i> Gérer les  catégories
                 </a>
             </li>
         @endif
-
+        
+        @if (auth()->user()->accountType->possible == 2 || auth()->user()->accountType->possible == 1)
         <li class="nav-item">
             <a class="nav-link " href="{{ route('conflits.index') }}">
-                <i class="fa fa-fire text-blue" aria-hidden="true"></i> Gérer les conflits
+                <i class="fa fa-fire text-blue" aria-hidden="true"></i> Gérer les incidents
+            </a>
+        </li>
+        @endif
+        {{-- <p style="color: white";>{{auth()->user()->accountType->country}} </p> --}}
+        <li class="nav-item">
+            <a class="nav-link disabled-link" href="#" style="font-weight: bold"; disabled>
+                <i class="fa fa-user text-blue" aria-hidden="true"></i> {{auth()->user()->accountType->country}} 
+
             </a>
         </li>
     </ul>
